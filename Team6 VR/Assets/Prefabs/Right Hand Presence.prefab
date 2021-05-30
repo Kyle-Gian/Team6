@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showController: 0
-  _controllerCharacteristics: 512
+  _controllerCharacteristics: 0
   _controllerPrefabs:
   - {fileID: 2806861823611270927, guid: 8565c76e56dc0e04e9857fe5d1a1c013, type: 3}
-  _handModelPrefab: {fileID: 100048, guid: 88e2e1bfe11ec6c438b0ade27eaeded1, type: 3}
+  _handModelPrefab: {fileID: 1581749144712736, guid: e201a24a09e942042b93390d0444d728, type: 3}
