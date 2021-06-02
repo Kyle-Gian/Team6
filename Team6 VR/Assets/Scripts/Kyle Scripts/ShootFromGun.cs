@@ -14,7 +14,7 @@ public class ShootFromGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _ReloadWeapon = GameObject.FindWithTag("Reload").GetComponent<ReloadWeapon>();
+        _ReloadWeapon = GetComponent<ReloadWeapon>();
         _barrel = GameObject.FindWithTag("Barrel").transform;
     }
 
@@ -25,10 +25,15 @@ public class ShootFromGun : MonoBehaviour
         {
             foreach (var obj in _ReloadWeapon._loadedObjects)
             {
-                obj.transform.position = _barrel.position;
+                //If the button has been pressed then shoot the bullet at the barrel position with the set speed
+                if (GunButtonPress.ButtonPressed())
+                {
+                    obj.transform.position = _barrel.position;
                     obj.SetActive(true);
                     obj.GetComponent<Rigidbody>().AddForce(0, 100, 1000);
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
+                }
+
             }
         }
     }

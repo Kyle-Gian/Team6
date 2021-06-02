@@ -10,11 +10,7 @@ using UnityEngine;
 public class ReloadWeapon : MonoBehaviour
 {
     public List<GameObject> _loadedObjects = new List<GameObject>();
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
