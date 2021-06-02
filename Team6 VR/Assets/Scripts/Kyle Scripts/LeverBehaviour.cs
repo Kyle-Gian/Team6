@@ -2,6 +2,7 @@
 //created: 29/5/2021
 //Last Modified: 29/5/2021
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,10 +19,14 @@ public class LeverBehaviour : MonoBehaviour
         _hinge = _lever.GetComponent<HingeJoint>();
     }
 
+    private void Update()
+    {
+        Debug.Log(_hinge.axis.x);
+    }
+
     public float LeverPosition()
     {
         Debug.Log(_hinge.axis.x);
-
         return _hinge.axis.x;
     }
 }
