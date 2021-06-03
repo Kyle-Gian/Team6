@@ -2,16 +2,17 @@
 //created: 3/6/2021
 //Last Modified: 3/6/2021
 
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Interactable")]
-public class Interactable : ScriptableObject
+public class Interactable : MonoBehaviour
 {
-    public GameObject _item;
-    public Vector3 _startPosition;
-    public bool _itemActive;
+    [HideInInspector] public Vector3 _startPosition;
     public ParticleSystem _collisionParticle;
     public ParticleSystem _trailParticle;
+
+    private void Start()
+    {
+        _startPosition = transform.position;
+    }
 }
