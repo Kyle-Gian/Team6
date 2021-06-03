@@ -20,7 +20,10 @@ public class RespawnInteractables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (var item in _interactables)
+        {
+
+        }
     }
 
     private bool HasItemBeenRemoved(GameObject interactable)
