@@ -14,21 +14,12 @@ public class RespawnInteractables : MonoBehaviour
     void Start()
     {
         _interactables = GameObject.FindGameObjectsWithTag("Loadableobject").ToList();
-        
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ResetAllPositions()
     {
-        foreach (var item in _interactables)
+        for (int i = 0; i < _interactables.Count; i++)
         {
-
+            _interactables[i].GetComponent<ResetPosition>().ResetObjectPos();
         }
-    }
-
-    private bool HasItemBeenRemoved(GameObject interactable)
-    {
-        
-        return false;
     }
 }
