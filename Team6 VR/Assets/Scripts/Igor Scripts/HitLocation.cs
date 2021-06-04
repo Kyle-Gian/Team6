@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class HitLocation : MonoBehaviour
 {
-  // Print how many points are colliding this transform
-    // And print the first point that is colliding.
+    public float Outer = 0f;
+    public float Middle = 0f;
+    public float Centre = 0f;
+
     void OnCollisionEnter(Collision other)
     {
         //print("Points colliding: " + other.contacts.Length);
         print("First point that collided: " + other.contacts[0].point);
-        float dis = Vector3.Distance(other.transform.position, other.contacts[0].point);
+        float dis = Vector3.Distance(other.contacts[0].point, transform.position);
         Debug.Log(dis);
-        if(dis > 1.2)
+        if(dis > Outer)
         {
-            Debug.Log("Score: 1");
+            Debug.Log("hit outer");
         }
-        else if (dis > 0.75)
+        else if (dis > Middle)
         {
-            Debug.Log("Score: 2");
+            Debug.Log("hit middle");
 
         }
-        else if(dis > 0)
+        else if(dis > Centre)
         {
-            Debug.Log("Score: 3");
+            Debug.Log("bullseye");
 
         }
     }
