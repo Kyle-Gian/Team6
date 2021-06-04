@@ -10,9 +10,25 @@ public class HandController : MonoBehaviour
     private void Awake()
     {
         _controllerActionGrip.action.performed += GripPress;
+        _controllerActionGrip.action.canceled += GripCancelled;
+
+
         _controllerActionTrigger.action.performed += GripTrigger;
+        _controllerActionGrip.action.canceled += TriggerCancelled;
+
 
         _handAnimator = GetComponent<Animator>();
+    }
+
+    private void TriggerCancelled(InputAction.CallbackContext obj)
+    {
+        _handAnimator.SetFloat("Trigger",0);
+    }
+
+    private void GripCancelled(InputAction.CallbackContext obj)
+    {
+        _handAnimator.SetFloat("Grip", 0);
+
     }
 
     private void GripTrigger(InputAction.CallbackContext obj)
