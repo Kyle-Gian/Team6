@@ -8,6 +8,7 @@ public class ResetPosition : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _startPos;
     public static bool _resetPos = false;
+    [SerializeField] private float _waitTime = 10;
 
     private Quaternion _startRotation;
     // Start is called before the first frame update
@@ -21,16 +22,18 @@ public class ResetPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position != _startPos)
+        if (transform.position != _startPos && !_resetPos)
         {
-            if (_rigidbody.velocity.magnitude < 0.5f)
-            {
-                if (_resetPos)
-                {
-                    ResetObjectPos();
-                    _resetPos = false;
-                }
-            }
+            //if (_rigidbody.velocity.magnitude < 0.5f)
+            //{
+            //    if (_resetPos)
+            //    {
+            //        ResetObjectPos();
+            //        _resetPos = false;
+            //    }
+            //}
+            _resetPos = true;
+            StartCoroutine("RespawnTime");
         }
     }
 
@@ -41,5 +44,12 @@ public class ResetPosition : MonoBehaviour
         _rigidbody.rotation = _startRotation;
         transform.position = _startPos;
         gameObject.SetActive(true);
+    }
+
+    IEnumerator RespawnTime()
+    {
+        yield return new WaitForSeconds(_waitTime);
+        ResetObjectPos();
+        _resetPos = false;
     }
 }
