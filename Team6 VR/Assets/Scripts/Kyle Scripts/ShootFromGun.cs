@@ -9,6 +9,7 @@ using UnityEngine;
 public class ShootFromGun : MonoBehaviour
 {
     private ReloadWeapon _ReloadWeapon;
+    [SerializeField] private float _shootingSpeed = 100;
 
     private Transform _barrel;
     // Start is called before the first frame update
@@ -30,7 +31,7 @@ public class ShootFromGun : MonoBehaviour
                 {
                     obj.transform.position = _barrel.position;
                     obj.SetActive(true);
-                    obj.GetComponent<Rigidbody>().AddForce(0, 100, 1000);
+                    obj.GetComponent<Rigidbody>().AddForce(0, _shootingSpeed, _shootingSpeed);
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
                 }
 
