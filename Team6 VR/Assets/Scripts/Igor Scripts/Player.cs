@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     protected Rigidbody rigidbody;			// reference to the rigidbody
     public GameObject projectile;
     public Transform gunEnd;
-    public bool firstHit = false;
+    //public bool firstHit = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     public void OnShoot()
     {
-        firstHit = false;
+        //firstHit = false;
         Ray mouseRay = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         GameObject newGameObject = (GameObject)Instantiate(projectile, mouseRay.origin, Quaternion.identity);
         Rigidbody rb = newGameObject.GetComponent<Rigidbody>();

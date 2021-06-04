@@ -9,6 +9,7 @@ TagManager:
   - Barrel
   - Gun Button
   - Lever
+  - Ball
   layers:
   - Default
   - TransparentFX
