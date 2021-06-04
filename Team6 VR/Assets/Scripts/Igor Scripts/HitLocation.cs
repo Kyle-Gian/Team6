@@ -10,32 +10,41 @@ public class HitLocation : MonoBehaviour
     public string outerScore = "100";
     public string middleScore = "200";
     public string bullseyeScore = "500";
+    Player player;
 
+    private void Awake()
+    {
+        player = FindObjectOfType<Player>();
+    }
 
     void OnCollisionEnter(Collision other)
     {
-        //print("Points colliding: " + other.contacts.Length);
-        print("First point that collided: " + other.contacts[0].point);
-        float dis = Vector3.Distance(other.contacts[0].point, transform.position);
-        Debug.Log(dis);
-
-        if(dis > outer)
+        if (player.firstHit == false)
         {
-            ShowScoreText(outerScore, other);
-            Debug.Log("hit outer");
-        }
-        else if (dis > middle)
-        {
-            ShowScoreText(middleScore, other);
+            player.firstHit = true;
+            //print("Points colliding: " + other.contacts.Length);
+            print("First point that collided: " + other.contacts[0].point);
+            float dis = Vector3.Distance(other.contacts[0].point, transform.position);
+            Debug.Log(dis);
 
-            Debug.Log("hit middle");
+            if (dis > outer)
+            {
+                ShowScoreText(outerScore, other);
+                Debug.Log("hit outer");
+            }
+            else if (dis > middle)
+            {
+                ShowScoreText(middleScore, other);
 
-        }
-        else if(dis > bullseye)
-        {
-            ShowScoreText(bullseyeScore, other);
-            Debug.Log("bullseye");
+                Debug.Log("hit middle");
 
+            }
+            else if (dis > bullseye)
+            {
+                ShowScoreText(bullseyeScore, other);
+                Debug.Log("bullseye");
+
+            }
         }
     }
 
