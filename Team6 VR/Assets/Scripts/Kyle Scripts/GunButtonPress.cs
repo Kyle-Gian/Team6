@@ -6,12 +6,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-
 public class GunButtonPress : MonoBehaviour
 {
     private GameObject _button;
     private Vector3 _buttonStartPos;
-
     private static bool _buttonPressed = true;
     void Start()
     {
@@ -39,7 +37,6 @@ public class GunButtonPress : MonoBehaviour
         }
  
     }
-
     public static bool ButtonPressed()
     {
         return _buttonPressed;

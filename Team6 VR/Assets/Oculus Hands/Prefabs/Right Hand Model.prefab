@@ -861,6 +861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5686134208185136530}
   - component: {fileID: 5686134208192617028}
+  - component: {fileID: -6742980166042824797}
   m_Layer: 0
   m_Name: Right Hand Model
   m_TagString: Untagged
@@ -893,7 +894,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5686134208185362930}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d0c255d07fd68f14b94e55d388e7e6bb, type: 3}
+  m_Avatar: {fileID: 9000000, guid: b6c38558987444240b3b3950e4450b77, type: 3}
   m_Controller: {fileID: 9100000, guid: be999142d1271e14ca5141ca666ba12c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -903,6 +904,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6742980166042824797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5686134208185362930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2fe723e5a80d3468332f435da26773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllerActionGrip: {fileID: -3087089415943642379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  _controllerActionTrigger: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &5686134208185362932
 GameObject:
   m_ObjectHideFlags: 0

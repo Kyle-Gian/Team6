@@ -76,10 +76,18 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Grip",
+                    "type": "Value",
+                    "id": "53c63b44-7410-4215-8e51-83d604c9704a",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Activate",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0c0991c5-d329-4afc-8892-1076b440477c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 },
@@ -486,6 +494,17 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "1b76cbbc-ec8b-41a5-81d2-ab7081a77aba",
+                    "path": "<XRController>{LeftHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -518,10 +537,18 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Grip",
+                    "type": "Value",
+                    "id": "56f125b4-0aa5-4a4b-bf78-baf7049c2423",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Activate",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "41976d89-60de-4deb-bff9-16b4af96b290",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 },
@@ -917,6 +944,17 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "be476eb7-30d1-4889-a5f0-55fa94cfc3d6",
+                    "path": "<XRController>{RightHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

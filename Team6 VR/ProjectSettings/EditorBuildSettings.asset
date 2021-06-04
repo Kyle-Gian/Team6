@@ -11,6 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Test Scenes/Kyle Test Scene.unity
     guid: 9b2ecb9e86676ff4d9f21546394dbba9
+  - enabled: 0
+    path: Assets/Scenes/Blockout.unity
+    guid: b0b0e0fe0ba13b749b9ede90dcd6dde3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7804a10113765314e89a06589471a896, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 66e538efe8ee51346a9ea044ff92451e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d62b9d120eb1f2f4fb8a9f1097e65b1c, type: 2}
