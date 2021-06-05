@@ -10,11 +10,18 @@ public class GunButtonPress : MonoBehaviour
 {
     private GameObject _button;
     private Vector3 _buttonStartPos;
-    private static bool _buttonPressed = true;
+    private static bool _buttonPressed = false;
+    private bool m_B;
+
+    public GunButtonPress()
+    {
+        m_B = _button != null;
+    }
+
     void Start()
     {
         _button = GameObject.FindWithTag("Gun Button");
-        if (_button != null)
+        if (m_B)
         {
             _buttonStartPos = _button.transform.position;
 
@@ -24,7 +31,7 @@ public class GunButtonPress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_button != null)
+        if (m_B)
         {
             if (_button.transform.position.y < _buttonStartPos.y - 0.5f)
             {
