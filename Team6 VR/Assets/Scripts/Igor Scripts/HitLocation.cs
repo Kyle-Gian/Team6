@@ -25,26 +25,26 @@ public class HitLocation : MonoBehaviour
             {
                 //player.firstHit = true;
                 //print("Points colliding: " + other.contacts.Length);
-                print("First point that collided: " + other.contacts[0].point);
+                //print("First point that collided: " + other.contacts[0].point);
                 float dis = Vector3.Distance(other.contacts[0].point, transform.position);
-                Debug.Log(dis);
+                //Debug.Log(dis);
 
                 if (dis > outer)
                 {
                     ShowScoreText(outerScore, other);
-                    Debug.Log("hit outer");
+                    //Debug.Log("hit outer");
                 }
                 else if (dis > middle)
                 {
                     ShowScoreText(middleScore, other);
 
-                    Debug.Log("hit middle");
+                   // Debug.Log("hit middle");
 
                 }
                 else if (dis > bullseye)
                 {
                     ShowScoreText(bullseyeScore, other);
-                    Debug.Log("bullseye");
+                    //Debug.Log("bullseye");
 
                 }
             }

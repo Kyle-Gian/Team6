@@ -9,5 +9,7 @@ public class Projectile : MonoBehaviour
     void OnCollisionExit(Collision other)
     {
         nameOfFirstHitObject = other.gameObject.name;
+        //nameOfFirstHitObject = other.contacts[0].otherCollider.name;
+        Debug.Log(other.gameObject.name);
     }
 }
