@@ -15,6 +15,17 @@ public class HitLocation : MonoBehaviour
     private void Awake()
     {
         // player = FindObjectOfType<Player>();
+        
+    }
+
+    private void Start()
+    {
+        FindObjectOfType<Projectile>().hitEvent += HitLocation_hitEvent;
+    }
+
+    private void HitLocation_hitEvent()
+    {
+        Debug.Log("Ouch!");
     }
 
     void OnCollisionEnter(Collision other)
