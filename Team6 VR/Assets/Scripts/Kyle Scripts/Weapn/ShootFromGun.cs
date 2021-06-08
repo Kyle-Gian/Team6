@@ -9,14 +9,13 @@ using UnityEngine;
 public class ShootFromGun : MonoBehaviour
 {
     private ReloadWeapon _ReloadWeapon;
-    [SerializeField] private float _shootingSpeed = 100;
-
-    private Transform _barrel;
+    [SerializeField] private float _shootingSpeed = 200;
+    private bool _weaponShot = false;
+    public Transform _barrel;
     // Start is called before the first frame update
     void Start()
     {
         _ReloadWeapon = GetComponent<ReloadWeapon>();
-        _barrel = GameObject.FindWithTag("Barrel").transform;
     }
 
     // Update is called once per frame
@@ -27,15 +26,24 @@ public class ShootFromGun : MonoBehaviour
             foreach (var obj in _ReloadWeapon._loadedObjects)
             {
                 //If the button has been pressed then shoot the bullet at the barrel position with the set speed
-                if (GunButtonPress.ButtonPressed())
+                if (GunButtonPress.ButtonPressed() && !_weaponShot)
                 {
+                    _weaponShot = true;
                     obj.transform.position = _barrel.position;
                     obj.SetActive(true);
-                    obj.GetComponent<Rigidbody>().AddForce(0, _shootingSpeed, _shootingSpeed);
+                    obj.GetComponent<Rigidbody>().AddForce(0, _shootingSpeed / 2, _shootingSpeed);
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
+                    StartCoroutine("CanShoot");
                 }
 
             }
+
         }
+    }
+
+    IEnumerator CanShoot()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _weaponShot = false;
     }
 }
