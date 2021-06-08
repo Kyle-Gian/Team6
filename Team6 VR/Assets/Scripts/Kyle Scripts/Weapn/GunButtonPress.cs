@@ -9,9 +9,7 @@ using UnityEngine.Events;
 using UnityEngine.XR;
 public class GunButtonPress : MonoBehaviour
 {
-    private Vector3 _buttonStartPos;
     private static bool _buttonPressed = false;
-    private bool m_B;
     public static bool ButtonPressed()
     {
         return _buttonPressed;

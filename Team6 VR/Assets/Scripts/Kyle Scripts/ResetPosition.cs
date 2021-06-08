@@ -38,13 +38,16 @@ public class ResetPosition : MonoBehaviour
 
     public void ResetObjectPos()
     {
-        gameObject.SetActive(false);
-        _rigidbody.velocity = Vector3.zero;
-        _rigidbody.rotation = _startRotation;
-        //transform.rotation = _startRotation;
-        _rigidbody.angularVelocity = Vector3.zero;
-        transform.position = _startPos;
-        gameObject.SetActive(true);
+        if (!_inAction)
+        {
+            gameObject.SetActive(false);
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.rotation = _startRotation;
+            _rigidbody.angularVelocity = Vector3.zero;
+            transform.position = _startPos;
+            gameObject.SetActive(true);
+        }
+
     }
 
     IEnumerator RespawnTime()
