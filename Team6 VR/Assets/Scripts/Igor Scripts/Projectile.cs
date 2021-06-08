@@ -10,9 +10,12 @@ public class Projectile : MonoBehaviour
     public delegate void HitDelegate();
     public event HitDelegate hitEvent;
 
-    void OnCollisionExit(Collision other)
+    void OnCollisionEnter(Collision other) // Change back to exit
     {
-        hitEvent?.Invoke();
+        if(hitEvent != null)
+        {
+            hitEvent();
+        }
 
         nameOfFirstHitObject = other.gameObject.name;
         //nameOfFirstHitObject = other.contacts[0].otherCollider.name;

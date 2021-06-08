@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     public Transform gunEnd;
     //public bool firstHit = false;
 
+
+    public delegate void ChangeEnemyColor(Color color);
+    public event ChangeEnemyColor onEnemyHit;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -56,6 +60,12 @@ public class Player : MonoBehaviour
         if (rb != null)
         {
             rb.velocity = mouseRay.direction * moveSpeed;
+        }
+
+        if(onEnemyHit != null)
+        {
+            onEnemyHit(Color.red);
+            Debug.Log("shoot");
         }
     }
 }
