@@ -76,18 +76,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Grip",
-                    "type": "Value",
-                    "id": "53c63b44-7410-4215-8e51-83d604c9704a",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Activate",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "0c0991c5-d329-4afc-8892-1076b440477c",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -160,6 +152,22 @@
                     "type": "Value",
                     "id": "bfa204c7-3c92-4193-bad1-39eb71920042",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Recall Hammer",
+                    "type": "Button",
+                    "id": "490a2736-8470-45a0-b419-18cdbb911dc4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SummonLightning",
+                    "type": "Value",
+                    "id": "f66215ee-b74c-4940-bab6-d1519fba6232",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -497,12 +505,34 @@
                 },
                 {
                     "name": "",
-                    "id": "1b76cbbc-ec8b-41a5-81d2-ab7081a77aba",
-                    "path": "<XRController>{LeftHand}/grip",
+                    "id": "a65847af-71d0-47ed-8eaa-e155ec85a0fe",
+                    "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Grip",
+                    "action": "Recall Hammer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef273301-739a-4139-91c0-a6e130c3833d",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "SummonLightning",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "668f3fdf-8e74-4d42-bf60-2f2dc07912f9",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SummonLightning",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -537,18 +567,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Grip",
-                    "type": "Value",
-                    "id": "56f125b4-0aa5-4a4b-bf78-baf7049c2423",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Activate",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "41976d89-60de-4deb-bff9-16b4af96b290",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -621,6 +643,14 @@
                     "type": "Value",
                     "id": "6f7cf253-7062-443b-b10f-2be48a33f027",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Recall Hammer",
+                    "type": "Button",
+                    "id": "9a874bdb-4d80-434c-8e02-189409f96afa",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -947,12 +977,12 @@
                 },
                 {
                     "name": "",
-                    "id": "be476eb7-30d1-4889-a5f0-55fa94cfc3d6",
-                    "path": "<XRController>{RightHand}/grip",
+                    "id": "2c906bb2-eb97-4e20-8783-c2b63668d4b7",
+                    "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Grip",
+                    "action": "Recall Hammer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
