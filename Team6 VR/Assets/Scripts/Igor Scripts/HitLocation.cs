@@ -1,8 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HitLocation : MonoBehaviour
 {
+    public GameObject _leftHand;
+    public GameObject _rightHand;
     public GameObject floatingScore;
     public float outer = 0f;
     public float middle = 0f;
@@ -13,21 +18,35 @@ public class HitLocation : MonoBehaviour
     int hit = 0;
     public static bool firstHit = false;
     ScoreScreen ss;
-    // Player player;
+
+    XRDirectInteractor _leftHandInteractor;
+    XRDirectInteractor _rightHandInteractor;
 
     private void Awake()
     {
-        // player = FindObjectOfType<Player>();
+        ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
+        reloadWeapon.ObjectLoaded.AddListener(HitLocation_hitEvent);
+
+        _leftHandInteractor = _leftHand.GetComponent<XRDirectInteractor>();
+        _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
+
+        _leftHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
+        _leftHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
 
     }
 
     private void Start()
     {
-        FindObjectOfType<Player>().onEnemyHit += HitLocation_hitEvent;
+        //FindObjectOfType<Player>().onEnemyHit += HitLocation_hitEvent;
+
         ss = FindObjectOfType<ScoreScreen>();
     }
 
-    private void HitLocation_hitEvent()
+    public void HitLocation_hitEvent(SelectEnterEventArgs test)
+    {
+        firstHit = false;
+    }
+    public void HitLocation_hitEvent()
     {
         firstHit = false;
     }
