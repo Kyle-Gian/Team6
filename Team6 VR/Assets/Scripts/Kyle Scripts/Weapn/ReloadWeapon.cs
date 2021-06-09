@@ -23,7 +23,7 @@ public class ReloadWeapon : MonoBehaviour
     {
         if (other.CompareTag("LoadableObject"))
         {
-            ObjectLoaded.Invoke();
+            //ObjectLoaded.Invoke();
             _loadedObjects.Add(other.gameObject);
             other.gameObject.SetActive(false);
         }
