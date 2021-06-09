@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 
 public class Player : MonoBehaviour
@@ -10,10 +11,10 @@ public class Player : MonoBehaviour
     public GameObject projectile;
     public Transform gunEnd;
     //public bool firstHit = false;
+    public UnityEvent onThrow;
 
-
-    public delegate void ChangeEnemyColor(Color color);
-    public event ChangeEnemyColor onEnemyHit;
+    public delegate void EnemyHit();
+    public event EnemyHit onEnemyHit;
 
     // Start is called before the first frame update
     void Awake()
@@ -64,8 +65,9 @@ public class Player : MonoBehaviour
 
         if(onEnemyHit != null)
         {
-            onEnemyHit(Color.red);
-            Debug.Log("shoot");
+            onEnemyHit();
+            Debug.Log("reset");
         }
+       
     }
 }

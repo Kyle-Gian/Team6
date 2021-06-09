@@ -7,7 +7,7 @@ public class ChangeColour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<Player>().onEnemyHit += ChangeColor;
+        
     }
 
     // Update is called once per frame

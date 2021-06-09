@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
     public delegate void HitDelegate();
     public event HitDelegate hitEvent;
 
-    void OnCollisionEnter(Collision other) // Change back to exit
+    void OnCollisionExit(Collision other) // Change back to exit
     {
         if(hitEvent != null)
         {
