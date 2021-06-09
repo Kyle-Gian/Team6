@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RingScore : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    ScoreScreen ss;
+    public GameObject floatingScore;
+    public int scoreValue;
+
+    private void Start()
     {
-        
+        ss = FindObjectOfType<ScoreScreen>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Ball"))
+        {
+            GameObject points = Instantiate(floatingScore, transform.position, Quaternion.identity);
+            points.transform.GetChild(0).GetComponent<TextMeshPro>().text = scoreValue.ToString();
+            ss.score += scoreValue;
+        }
     }
 }
