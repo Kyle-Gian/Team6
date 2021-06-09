@@ -7,11 +7,12 @@ public class HitLocation : MonoBehaviour
     public float outer = 0f;
     public float middle = 0f;
     public float bullseye = 0f;
-    public string outerScore = "100";
-    public string middleScore = "200";
-    public string bullseyeScore = "500";
+    public int outerScore = 100;
+    public int middleScore = 200;
+    public int bullseyeScore = 500;
     int hit = 0;
     public static bool firstHit = false;
+    ScoreScreen ss;
     // Player player;
 
     private void Awake()
@@ -23,6 +24,7 @@ public class HitLocation : MonoBehaviour
     private void Start()
     {
         FindObjectOfType<Player>().onEnemyHit += HitLocation_hitEvent;
+        ss = FindObjectOfType<ScoreScreen>();
     }
 
     private void HitLocation_hitEvent()
@@ -74,10 +76,11 @@ public class HitLocation : MonoBehaviour
         }
     }
 
-    public void ShowScoreText(string score, Collision other)
+    public void ShowScoreText(int score, Collision other)
     {
         GameObject points = Instantiate(floatingScore, other.contacts[0].point, Quaternion.identity);
-        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score;
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
+        ss.score += score;
     }
 
 }
