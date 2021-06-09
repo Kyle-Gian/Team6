@@ -27,6 +27,10 @@ public class HitLocation : MonoBehaviour
         ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
         reloadWeapon.ObjectLoaded.AddListener(HitLocation_hitEvent);
 
+        _leftHand = GameObject.FindGameObjectWithTag("left");
+        _rightHand = GameObject.FindGameObjectWithTag("right");
+
+
         _leftHandInteractor = _leftHand.GetComponent<XRDirectInteractor>();
         _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
 

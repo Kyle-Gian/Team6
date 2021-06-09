@@ -11,6 +11,8 @@ TagManager:
   - Lever
   - Ball
   - Hand
+  - left
+  - right
   layers:
   - Default
   - TransparentFX
