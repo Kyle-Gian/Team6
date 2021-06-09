@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2328431454211978078}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: Barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,10 +136,46 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5712475060919329664}
+        m_TargetAssemblyTypeName: GunButtonPress, Assembly-CSharp
+        m_MethodName: TriggerIn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ResetPosition, Assembly-CSharp
+        m_MethodName: ObjectInAction
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5712475060919329664}
+        m_TargetAssemblyTypeName: GunButtonPress, Assembly-CSharp
+        m_MethodName: TriggerIn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -216,7 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae96ba32bc173fb449a4003d782116ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shootingSpeed: 100
+  _shootingSpeed: 200
+  _barrel: {fileID: 2328431454211978078}
 --- !u!114 &3554642060844623055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +266,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c157943f668b34cb8a40e0e73e66be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: ObjectThrown
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ResetPosition, Assembly-CSharp
+        m_MethodName: ObjectInAction
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _loadedObjects: []
+  _gunCapacity: 2
 --- !u!114 &5712475060919329664
 MonoBehaviour:
   m_ObjectHideFlags: 0
