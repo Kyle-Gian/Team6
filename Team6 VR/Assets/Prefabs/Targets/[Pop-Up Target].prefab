@@ -12093,6 +12093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6865138521462131569}
   - component: {fileID: 3084972752797464282}
+  - component: {fileID: 5950906255415553997}
   m_Layer: 0
   m_Name: '[Pop-Up Target]'
   m_TagString: Untagged
@@ -12135,6 +12136,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5950906255415553997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865138521462131570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
+  outer: 0
+  middle: 0
+  bullseye: 0
+  outerScore: 100
+  middleScore: 200
+  bullseyeScore: 500
 --- !u!1 &6865138522227137273
 GameObject:
   m_ObjectHideFlags: 0

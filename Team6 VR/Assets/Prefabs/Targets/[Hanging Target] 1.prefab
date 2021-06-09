@@ -285,7 +285,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0001080672, y: 0.89379996, z: 0.021094307}
+  m_ConnectedAnchor: {x: -0.0001080672, y: 1, z: 0.021094307}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -36303,6 +36303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8366092447660015919}
   - component: {fileID: 112464107290180740}
+  - component: {fileID: 8582109240232891118}
   m_Layer: 0
   m_Name: '[Hanging Target] 1'
   m_TagString: Untagged
@@ -36345,3 +36346,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8582109240232891118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8366092447660015916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
+  outer: 0
+  middle: 0
+  bullseye: 0
+  outerScore: 100
+  middleScore: 200
+  bullseyeScore: 500
