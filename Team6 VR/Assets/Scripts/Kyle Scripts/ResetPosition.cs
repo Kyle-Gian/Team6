@@ -13,7 +13,7 @@ public class ResetPosition : MonoBehaviour
     private Vector3 _startPos;
     [SerializeField] private float _waitTime = 5;
     private bool _inAction;
-
+    ReloadWeapon _reloadWeapon;
     private Quaternion _startRotation;
     // Start is called before the first frame update
     void Start()
@@ -21,11 +21,15 @@ public class ResetPosition : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _startPos = transform.position;
         _startRotation = Quaternion.identity;
+
+        _reloadWeapon = FindObjectOfType<ReloadWeapon>();
+        _reloadWeapon.ObjectLoaded.AddListener(delegate { ObjectInAction(true); });
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Vector3.Distance(transform.position, _startPos) > 1)
         {
             if (!_inAction)

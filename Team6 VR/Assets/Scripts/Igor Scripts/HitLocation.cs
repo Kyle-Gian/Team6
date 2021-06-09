@@ -35,7 +35,7 @@ public class HitLocation : MonoBehaviour
         _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
 
         _leftHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
-        _leftHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
+        _rightHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
 
     }
 
