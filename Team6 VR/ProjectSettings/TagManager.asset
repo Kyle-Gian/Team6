@@ -10,6 +10,7 @@ TagManager:
   - Gun Button
   - Lever
   - Ball
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player Hands
+  - Interactable
   - 
   - 
   - 
