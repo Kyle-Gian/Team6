@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CanRotation : MonoBehaviour
 {
-    [SerializeField]
-    float eulerAngleX;
-    [SerializeField]
-    float eulerAngleY;
-    [SerializeField]
-    float eulerAngleZ;
+    public GameObject floatingScore;
 
     public List<Transform> cans1 = new List<Transform>();
     public List<Transform> cans2 = new List<Transform>();
     public List<Transform> cans3 = new List<Transform>();
     public List<Transform> cans4 = new List<Transform>();
+    public float angle1 = 45f;
+    public float angle2 = 315f;
+
 
     public Vector3 eulerAngles;
 
@@ -55,7 +54,6 @@ public class CanRotation : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void Update()
@@ -64,28 +62,25 @@ public class CanRotation : MonoBehaviour
         {
             CanRotationCheck(c);
         }
-
-
     }
 
-    //private void OnCollisionEnter(Collision other)
-    //{
-    //    if (other.gameObject.CompareTag("Ball"))
-    //    {
-    //        if (eulerAngles.x > 45f && eulerAngles.x < 315f || eulerAngles.z > 45f && eulerAngles.z < 315f)
-    //        {
-    //            ss.score += scoreValue;
-    //        }
-    //    }
-    //}
 
     public void CanRotationCheck(Transform can)
     {
-        if (can.eulerAngles.x > 45f && can.eulerAngles.x < 315f || can.eulerAngles.z > 45f && can.eulerAngles.z < 315f)
+        CanSelfData data = can.GetComponent<CanSelfData>();
+        if (!data.fallen)
         {
-            
-            ss.score += scoreValue;
-            can.GetComponent<CanSelfData>().fallen = true;
+            if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2)
+            {
+                data.fallen = true;
+                ShowScoreText(scoreValue, can);
+            }
         }
+    }
+    public void ShowScoreText(int score, Transform can)
+    {
+        GameObject points = Instantiate(floatingScore, can.position, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
+        ss.score += score;
     }
 }
