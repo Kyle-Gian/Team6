@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         if(onEnemyHit != null)
         {
             onEnemyHit();
-            Debug.Log("reset");
+            //Debug.Log("reset");
         }
        
     }

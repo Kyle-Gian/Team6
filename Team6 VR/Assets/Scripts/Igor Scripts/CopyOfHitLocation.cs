@@ -10,11 +10,14 @@ public class CopyOfHitLocation : MonoBehaviour
     public int outerScore = 100;
     public int middleScore = 200;
     public int bullseyeScore = 500;
-    int hit = 0;
+    
     public static bool firstHit = false;
     ScoreScreen ss;
 
-    public AudioClip impact;
+    public AudioClip impact0;
+    public AudioClip impact1;
+    public AudioClip impact2;
+    public AudioClip impact3;
     AudioSource audioSource;
     // Player player;
 
@@ -52,20 +55,18 @@ public class CopyOfHitLocation : MonoBehaviour
             {
                 float dis = Vector3.Distance(other.contacts[0].point, transform.position);
 
-                hit++;
-                Debug.Log("Hit" + hit);
                 firstHit = true;
                 if (dis > outer)
                 {
                     ShowScoreText(outerScore, other);
-                    audioSource.clip = impact;
+                    audioSource.clip = impact1;
                     audioSource.Play();
                     //Debug.Log("hit outer");
                 }
                 else if (dis > middle)
                 {
                     ShowScoreText(middleScore, other);
-                    audioSource.clip = impact;
+                    audioSource.clip = impact2;
                     audioSource.Play();
                     // Debug.Log("hit middle");
 
@@ -73,7 +74,7 @@ public class CopyOfHitLocation : MonoBehaviour
                 else if (dis > bullseye)
                 {
                     ShowScoreText(bullseyeScore, other);
-                    audioSource.clip = impact;
+                    audioSource.clip = impact3;
                     audioSource.Play();
                     //Debug.Log("bullseye");
 

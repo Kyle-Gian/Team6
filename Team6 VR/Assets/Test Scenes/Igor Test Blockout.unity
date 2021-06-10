@@ -51019,7 +51019,6 @@ GameObject:
   - component: {fileID: 615491842}
   - component: {fileID: 615491841}
   - component: {fileID: 615491840}
-  - component: {fileID: 615491843}
   m_Layer: 0
   m_Name: TargetMidL1
   m_TagString: Untagged
@@ -51105,27 +51104,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615491838}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &615491843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615491838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
-  floatingScore: {fileID: 631136622}
-  outer: 0
-  middle: 0
-  bullseye: 0
-  outerScore: 100
-  middleScore: 200
-  bullseyeScore: 500
 --- !u!1 &631136622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
@@ -63938,7 +63916,6 @@ GameObject:
   - component: {fileID: 1289736127}
   - component: {fileID: 1289736126}
   - component: {fileID: 1289736125}
-  - component: {fileID: 1289736128}
   m_Layer: 0
   m_Name: TargetMidL2
   m_TagString: Untagged
@@ -64024,27 +64001,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289736123}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1289736128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289736123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
-  floatingScore: {fileID: 631136622}
-  outer: 0
-  middle: 0
-  bullseye: 0
-  outerScore: 100
-  middleScore: 200
-  bullseyeScore: 500
 --- !u!43 &1295346656
 Mesh:
   m_ObjectHideFlags: 0
@@ -64221,7 +64177,6 @@ GameObject:
   - component: {fileID: 1303377328}
   - component: {fileID: 1303377327}
   - component: {fileID: 1303377326}
-  - component: {fileID: 1303377329}
   m_Layer: 0
   m_Name: TargetMidR1
   m_TagString: Untagged
@@ -64307,27 +64262,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303377324}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1303377329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303377324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
-  floatingScore: {fileID: 631136622}
-  outer: 0
-  middle: 0
-  bullseye: 0
-  outerScore: 100
-  middleScore: 200
-  bullseyeScore: 500
 --- !u!4 &1320131044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7806549978470094817, guid: a3a37deb0a5204f4384e3158ba256de0, type: 3}
@@ -65139,7 +65073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impact: {fileID: 8300000, guid: 4e1ddee34169d4c42b33b53505f50327, type: 3}
   particleEffect: {fileID: 7129573030249689680, guid: 320f7d7ab5b73f249a48cd0b7ab2bbf9, type: 3}
-  velocity: 2
+  velocity: 0.5
   ProjectileHit:
     m_PersistentCalls:
       m_Calls:
@@ -86603,7 +86537,6 @@ GameObject:
   - component: {fileID: 1655531566}
   - component: {fileID: 1655531565}
   - component: {fileID: 1655531564}
-  - component: {fileID: 1655531567}
   - component: {fileID: 1655531568}
   - component: {fileID: 1655531569}
   m_Layer: 0
@@ -86690,27 +86623,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655531562}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1655531567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655531562}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
-  floatingScore: {fileID: 631136622}
-  outer: 0.7
-  middle: 0.4
-  bullseye: 0
-  outerScore: 100
-  middleScore: 200
-  bullseyeScore: 500
 --- !u!114 &1655531568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86730,7 +86642,10 @@ MonoBehaviour:
   outerScore: 100
   middleScore: 200
   bullseyeScore: 500
-  impact: {fileID: 8300000, guid: 2cdc6ba4fb866d34fb6b9f4446ce49c8, type: 3}
+  impact0: {fileID: 8300000, guid: 2cdc6ba4fb866d34fb6b9f4446ce49c8, type: 3}
+  impact1: {fileID: 8300000, guid: 1d88aec90ed2126428fca3054ce05b6d, type: 3}
+  impact2: {fileID: 8300000, guid: 4a0b8915347618d4b9e5aa81a5d034db, type: 3}
+  impact3: {fileID: 8300000, guid: 03379714602739a4e85a0c99a9c6bd10, type: 3}
 --- !u!82 &1655531569
 AudioSource:
   m_ObjectHideFlags: 0
@@ -87331,7 +87246,6 @@ GameObject:
   - component: {fileID: 1728924392}
   - component: {fileID: 1728924391}
   - component: {fileID: 1728924390}
-  - component: {fileID: 1728924393}
   m_Layer: 0
   m_Name: TargetMidR2
   m_TagString: Untagged
@@ -87417,27 +87331,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728924388}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1728924393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728924388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
-  floatingScore: {fileID: 631136622}
-  outer: 0
-  middle: 0
-  bullseye: 0
-  outerScore: 100
-  middleScore: 200
-  bullseyeScore: 500
 --- !u!1 &1765482801
 GameObject:
   m_ObjectHideFlags: 0

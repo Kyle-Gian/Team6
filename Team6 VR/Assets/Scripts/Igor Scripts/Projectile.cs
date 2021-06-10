@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     public AudioClip impact;
     AudioSource audioSource;
     public GameObject particleEffect;
-    public float velocity = 1f;
+    public float velocity = 0.5f;
     Rigidbody rb;
     public UnityEvent ProjectileHit;
 
@@ -31,7 +31,6 @@ public class Projectile : MonoBehaviour
             audioSource.Play();
             Instantiate(particleEffect, transform.position, Quaternion.identity);
         }
-
 
     }
 }
