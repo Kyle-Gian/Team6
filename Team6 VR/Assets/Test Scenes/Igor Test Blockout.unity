@@ -65137,9 +65137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7be2dac1b46b247b5a3c8bc3f62c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impact: {fileID: 8300000, guid: b0b3b5877f40d2d4b83259bb33ddf361, type: 3}
-  particleEffect: {fileID: 0}
-  velocity: 1
+  impact: {fileID: 8300000, guid: 4e1ddee34169d4c42b33b53505f50327, type: 3}
+  particleEffect: {fileID: 7129573030249689680, guid: 320f7d7ab5b73f249a48cd0b7ab2bbf9, type: 3}
+  velocity: 2
   ProjectileHit:
     m_PersistentCalls:
       m_Calls:
@@ -65178,7 +65178,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5b44a45cac4054a418e4a43406337f8b, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b0b3b5877f40d2d4b83259bb33ddf361, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e1ddee34169d4c42b33b53505f50327, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
