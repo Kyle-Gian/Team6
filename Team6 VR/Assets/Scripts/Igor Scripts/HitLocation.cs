@@ -41,8 +41,6 @@ public class HitLocation : MonoBehaviour
 
     private void Start()
     {
-        //FindObjectOfType<Player>().onEnemyHit += HitLocation_hitEvent;
-
         ss = FindObjectOfType<ScoreScreen>();
     }
 
@@ -59,15 +57,6 @@ public class HitLocation : MonoBehaviour
     {
         if (other.transform.CompareTag("Ball"))
         {
-            // if (other.transform.GetComponent<Projectile>().nameOfFirstHitObject != transform.name/*player.firstHit == false*/)
-            // {
-            //player.firstHit = true;
-            //print("Points colliding: " + other.contacts.Length);
-            //print("First point that collided: " + other.contacts[0].point);
-            //Debug.Log(dis);
-
-            // GameObject points = Instantiate(floatingScore, other.contacts[0].point, Quaternion.identity);
-            // points.transform.GetChild(0).GetComponent<TextMeshPro>().text = bullseyeScore;
             if (firstHit == false)
             {
                 float dis = Vector3.Distance(other.contacts[0].point, transform.position);
@@ -78,24 +67,16 @@ public class HitLocation : MonoBehaviour
                 if (dis > outer)
                 {
                     ShowScoreText(outerScore, other);
-                    //Debug.Log("hit outer");
                 }
                 else if (dis > middle)
                 {
                     ShowScoreText(middleScore, other);
-
-                    // Debug.Log("hit middle");
-
                 }
                 else if (dis > bullseye)
                 {
                     ShowScoreText(bullseyeScore, other);
-                    //Debug.Log("bullseye");
-
                 }
             }
-
-            // }
         }
     }
 

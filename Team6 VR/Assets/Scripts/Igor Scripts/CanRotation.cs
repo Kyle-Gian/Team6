@@ -14,6 +14,8 @@ public class CanRotation : MonoBehaviour
     public float angle1 = 45f;
     public float angle2 = 315f;
 
+    public AudioClip impact;
+    AudioSource audioSource;
 
     public Vector3 eulerAngles;
 
@@ -68,12 +70,15 @@ public class CanRotation : MonoBehaviour
     public void CanRotationCheck(Transform can)
     {
         CanSelfData data = can.GetComponent<CanSelfData>();
+        
         if (!data.fallen)
         {
             if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2)
             {
                 data.fallen = true;
                 ShowScoreText(scoreValue, can);
+                can.GetComponent<AudioSource>().clip = impact;
+                can.GetComponent<AudioSource>().Play();
             }
         }
     }

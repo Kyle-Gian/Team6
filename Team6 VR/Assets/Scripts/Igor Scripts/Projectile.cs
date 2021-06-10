@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[RequireComponent(typeof(AudioSource))]
 public class Projectile : MonoBehaviour
 {
-    public string nameOfFirstHitObject;
 
-    public delegate void HitDelegate();
-    public event HitDelegate hitEvent;
+    public AudioClip impact;
+    AudioSource audioSource;
 
-    void OnCollisionExit(Collision other) // Change back to exit
+    private void Start()
     {
-        if(hitEvent != null)
-        {
-            hitEvent();
-        }
+        audioSource = GetComponent<AudioSource>();
+    }
 
-        nameOfFirstHitObject = other.gameObject.name;
-        //nameOfFirstHitObject = other.contacts[0].otherCollider.name;
-        //Debug.Log(other.gameObject.name);
+    void OnCollisionEnter(Collision other)
+    {
+        audioSource.clip = impact;
+        audioSource.Play();
     }
 }

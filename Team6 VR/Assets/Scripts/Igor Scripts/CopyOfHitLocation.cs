@@ -13,12 +13,15 @@ public class CopyOfHitLocation : MonoBehaviour
     int hit = 0;
     public static bool firstHit = false;
     ScoreScreen ss;
+
+    public AudioClip impact;
+    AudioSource audioSource;
     // Player player;
 
     private void Awake()
     {
         // player = FindObjectOfType<Player>();
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -55,18 +58,23 @@ public class CopyOfHitLocation : MonoBehaviour
                 if (dis > outer)
                 {
                     ShowScoreText(outerScore, other);
+                    audioSource.clip = impact;
+                    audioSource.Play();
                     //Debug.Log("hit outer");
                 }
                 else if (dis > middle)
                 {
                     ShowScoreText(middleScore, other);
-
+                    audioSource.clip = impact;
+                    audioSource.Play();
                     // Debug.Log("hit middle");
 
                 }
                 else if (dis > bullseye)
                 {
                     ShowScoreText(bullseyeScore, other);
+                    audioSource.clip = impact;
+                    audioSource.Play();
                     //Debug.Log("bullseye");
 
                 }
