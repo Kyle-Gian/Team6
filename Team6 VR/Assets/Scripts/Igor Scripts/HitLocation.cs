@@ -1,13 +1,10 @@
 using UnityEngine;
-using System.Collections.Generic;
 using TMPro;
-using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class HitLocation : MonoBehaviour
 {
-    public GameObject _leftHand;
-    public GameObject _rightHand;
+
     public GameObject floatingScore;
     public float outer = 0f;
     public float middle = 0f;
@@ -19,6 +16,8 @@ public class HitLocation : MonoBehaviour
     public static bool firstHit = false;
     ScoreScreen ss;
 
+    public GameObject _leftHand;
+    public GameObject _rightHand;
     XRDirectInteractor _leftHandInteractor;
     XRDirectInteractor _rightHandInteractor;
 
@@ -30,32 +29,32 @@ public class HitLocation : MonoBehaviour
         ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
         reloadWeapon.ObjectLoaded.AddListener(HitLocation_hitEvent);
 
-        _leftHand = GameObject.FindGameObjectWithTag("left");
-        _rightHand = GameObject.FindGameObjectWithTag("right");
+        //If either the left or right hand are null throw an error for the user
+        if (_leftHand != null)
+        {
+            //Get the left hand interactor and access the event
+            _leftHandInteractor = _leftHand.GetComponent<XRDirectInteractor>();
+            _leftHandInteractor.selectEntered.RemoveListener(HitLocation_hitEvent);
 
+        }
+        else
+        {
+            Debug.LogError("Left hand has not been attached, Check Tag on left hand controller");
 
-        _leftHandInteractor = _leftHand.GetComponent<XRDirectInteractor>();
-        _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
+        }
+        if (_rightHand != null)
+        {
+            //Get the right hand interactor and access the event
+            _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
+            _rightHandInteractor.selectEntered.RemoveListener(HitLocation_hitEvent);
 
-        _leftHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
-        _rightHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
+        }
+        else
+        {
+            Debug.LogError("Right hand has not been attached, Check Tag on Right hand controller");
+
+        }
     }
-    private void OnDisable()
-    {
-        ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
-        reloadWeapon.ObjectLoaded.RemoveListener(HitLocation_hitEvent);
-
-        _leftHand = GameObject.FindGameObjectWithTag("left");
-        _rightHand = GameObject.FindGameObjectWithTag("right");
-
-
-        _leftHandInteractor = _leftHand.GetComponent<XRDirectInteractor>();
-        _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
-
-        _leftHandInteractor.selectEntered.RemoveListener(HitLocation_hitEvent);
-        _rightHandInteractor.selectEntered.RemoveListener(HitLocation_hitEvent);
-    }
-
 
     public void HitLocation_hitEvent(SelectEnterEventArgs test)
     {

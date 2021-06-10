@@ -13,9 +13,10 @@ public class BallShotAtTarget : Challenges
         _challenge = "Shoot the ball at the Target";
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void ChallengeIsCompleted()
     {
-        
+        _challengeComplete = true;
     }
+
 }
