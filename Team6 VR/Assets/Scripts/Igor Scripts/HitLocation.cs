@@ -22,8 +22,11 @@ public class HitLocation : MonoBehaviour
     XRDirectInteractor _leftHandInteractor;
     XRDirectInteractor _rightHandInteractor;
 
-    private void Awake()
+    private void Start()
     {
+        //FindObjectOfType<Player>().onEnemyHit += HitLocation_hitEvent;
+
+        ss = FindObjectOfType<ScoreScreen>();
         ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
         reloadWeapon.ObjectLoaded.AddListener(HitLocation_hitEvent);
 
@@ -36,13 +39,23 @@ public class HitLocation : MonoBehaviour
 
         _leftHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
         _rightHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
-
     }
-
-    private void Start()
+    private void OnDisable()
     {
-        ss = FindObjectOfType<ScoreScreen>();
+        ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
+        reloadWeapon.ObjectLoaded.RemoveListener(HitLocation_hitEvent);
+
+        _leftHand = GameObject.FindGameObjectWithTag("left");
+        _rightHand = GameObject.FindGameObjectWithTag("right");
+
+
+        _leftHandInteractor = _leftHand.GetComponent<XRDirectInteractor>();
+        _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
+
+        _leftHandInteractor.selectEntered.RemoveListener(HitLocation_hitEvent);
+        _rightHandInteractor.selectEntered.RemoveListener(HitLocation_hitEvent);
     }
+
 
     public void HitLocation_hitEvent(SelectEnterEventArgs test)
     {

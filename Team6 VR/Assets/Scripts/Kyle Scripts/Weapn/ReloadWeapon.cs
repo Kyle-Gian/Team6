@@ -10,12 +10,22 @@ using UnityEngine.Events;
 
 public class ReloadWeapon : MonoBehaviour
 {
-    public UnityEvent ObjectLoaded;
+    [HideInInspector]public UnityEvent ObjectLoaded;
+    [HideInInspector] public UnityEvent ObjectShot;
+
     public List<GameObject> _loadedObjects = new List<GameObject>();
     public int _gunCapacity = 2;
 
-    private void Start()
+    private void OnEnable()
     {
+        if (ObjectLoaded == null)
+        {
+            ObjectLoaded = new UnityEvent();
+        }
+        if (ObjectShot == null)
+        {
+            ObjectShot = new UnityEvent();
+        }
         _loadedObjects.Capacity = _gunCapacity;
     }
 
@@ -23,7 +33,7 @@ public class ReloadWeapon : MonoBehaviour
     {
         if (other.CompareTag("LoadableObject"))
         {
-            //ObjectLoaded.Invoke();
+            ObjectLoaded.Invoke();
             _loadedObjects.Add(other.gameObject);
             other.gameObject.SetActive(false);
         }
@@ -31,6 +41,8 @@ public class ReloadWeapon : MonoBehaviour
 
     public void RemoveObjectFromLoadedList(GameObject obj)
     {
+        ObjectShot.Invoke();
+
         _loadedObjects.Remove(obj);
     }
 }
