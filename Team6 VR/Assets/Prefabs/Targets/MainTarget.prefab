@@ -24203,7 +24203,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5076337280588310333}
-  - component: {fileID: 933953452235287493}
   m_Layer: 0
   m_Name: MainTarget
   m_TagString: Untagged
@@ -24228,27 +24227,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &933953452235287493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5076337280588310334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
-  floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
-  outer: 0
-  middle: 0
-  bullseye: 0
-  outerScore: 100
-  middleScore: 200
-  bullseyeScore: 500
 --- !u!1 &5076337280635648723
 GameObject:
   m_ObjectHideFlags: 0
@@ -36378,6 +36356,7 @@ GameObject:
   - component: {fileID: 6100618861367183736}
   - component: {fileID: 7927574458580567236}
   - component: {fileID: 6093563845573754603}
+  - component: {fileID: 1902095829720622990}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -48298,3 +48277,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1902095829720622990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681672957618539917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}
+  floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
+  outer: 0
+  middle: 0
+  bullseye: 0
+  outerScore: 100
+  middleScore: 200
+  bullseyeScore: 500

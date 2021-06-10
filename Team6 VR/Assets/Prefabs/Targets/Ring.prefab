@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3545446001785033882}
   - component: {fileID: 70365958158326806}
+  - component: {fileID: 558725191362282539}
   m_Layer: 0
   m_Name: Score_Trigger
   m_TagString: Untagged
@@ -171,6 +172,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.225, y: 0.01, z: 0.225}
   m_Center: {x: -0.18, y: 0, z: 0}
+--- !u!114 &558725191362282539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545446001785033885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca0a5a99c43c744787fdd43b5549752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
+  scoreValue: 10
 --- !u!1 &3545446002575307672
 GameObject:
   m_ObjectHideFlags: 0
