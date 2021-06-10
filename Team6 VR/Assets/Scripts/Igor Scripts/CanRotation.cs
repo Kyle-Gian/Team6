@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class CanRotation : MonoBehaviour
 {
+    public List<Color> colors = new List<Color>();
+
     public GameObject floatingScore;
 
     public List<Transform> cans1 = new List<Transform>();
@@ -100,8 +103,19 @@ public class CanRotation : MonoBehaviour
 
     public void ShowScoreText(int score, Transform can)
     {
+        //GameObject points = Instantiate(floatingScore, can.position, Quaternion.identity);
+        //points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
+        //ss.score += score;
+
+        TextMeshPro text = floatingScore.transform.GetChild(0).GetComponent<TextMeshPro>();
+
+        int randomNumber = Random.Range(0, colors.Count);
+
+        text.color = new Color(colors[randomNumber].r, colors[randomNumber].g, colors[randomNumber].b,1);
+
         GameObject points = Instantiate(floatingScore, can.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
         ss.score += score;
+        Destroy(points, 2f);
     }
 }

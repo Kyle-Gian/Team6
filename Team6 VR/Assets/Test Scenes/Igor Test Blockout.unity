@@ -52742,6 +52742,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602ae06ab4cf1bd45aa890da8df1ff99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 0, b: 0.10111046, a: 0}
+  - {r: 0.03127098, g: 1, b: 0, a: 0}
+  - {r: 1, g: 0.97981787, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0.44892502, a: 0}
+  - {r: 0, g: 1, b: 0.92096996, a: 0}
   floatingScore: {fileID: 631136622}
   cans1: []
   cans2: []
@@ -86635,6 +86641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f100e19e010203d4a9231dc4b27638fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 0, b: 0.14044952, a: 0}
+  - {r: 0.05724919, g: 1, b: 0, a: 0}
+  - {r: 1, g: 0.8118372, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0.8976784, a: 0}
+  - {r: 0, g: 0.45413113, b: 1, a: 0}
   floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
   outer: 0.7
   middle: 0.4
@@ -101265,6 +101277,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7841195415930839868, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4291855830
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841195415930839868, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7841195415930839869, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
       propertyPath: cam
       value: 

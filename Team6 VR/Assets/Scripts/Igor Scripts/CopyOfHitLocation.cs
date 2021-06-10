@@ -1,8 +1,13 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CopyOfHitLocation : MonoBehaviour
 {
+    public List<Color> colors = new List<Color>();
+
+
     public GameObject floatingScore;
     public float outer = 0f;
     public float middle = 0f;
@@ -87,9 +92,16 @@ public class CopyOfHitLocation : MonoBehaviour
 
     public void ShowScoreText(int score, Collision other)
     {
+        TextMeshPro text = floatingScore.transform.GetChild(0).GetComponent<TextMeshPro>();
+
+        int randomNumber = Random.Range(0, colors.Count);
+
+        text.color = new Color(colors[randomNumber].r, colors[randomNumber].g, colors[randomNumber].b, 1);
+
         GameObject points = Instantiate(floatingScore, other.contacts[0].point, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
         ss.score += score;
+        Destroy(points, 2f);
     }
 
 }

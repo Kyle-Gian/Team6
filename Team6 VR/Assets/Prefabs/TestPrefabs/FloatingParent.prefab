@@ -92,7 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b497d4d2360cb418c5cd3f39684081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!95 &7841195415930839870
 Animator:
   serializedVersion: 3
@@ -141,9 +140,9 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255404
-  m_fontColor: {r: 0.17121458, g: 1, b: 0, a: 1}
-  m_enableVertexGradient: 1
+    rgba: 4279238400
+  m_fontColor: {r: 0, g: 1, b: 0.060203552, a: 1}
+  m_enableVertexGradient: 0
   m_colorMode: 0
   m_fontColorGradient:
     topLeft: {r: 0.24171257, g: 1, b: 0, a: 1}
