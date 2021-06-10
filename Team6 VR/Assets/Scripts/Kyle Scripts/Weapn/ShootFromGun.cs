@@ -31,7 +31,7 @@ public class ShootFromGun : MonoBehaviour
                     _weaponShot = true;
                     obj.transform.position = _barrel.position;
                     obj.SetActive(true);
-                    obj.GetComponent<Rigidbody>().AddForce((_barrel.position.x * _shootingSpeed) * 10, _barrel.position.y * _shootingSpeed, (_barrel.position.z * _shootingSpeed) * 10);
+                    obj.GetComponent<Rigidbody>().velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed));
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
                     StartCoroutine("CanShoot");
                 }

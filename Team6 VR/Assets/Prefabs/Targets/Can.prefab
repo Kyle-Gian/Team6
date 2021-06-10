@@ -1183,6 +1183,7 @@ GameObject:
   - component: {fileID: 5834680863214230192}
   - component: {fileID: 6967110780049974418}
   - component: {fileID: 8247740363414421767}
+  - component: {fileID: 5944845155668916199}
   m_Layer: 0
   m_Name: Can
   m_TagString: Untagged
@@ -1332,3 +1333,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &5944845155668916199
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273923149695363304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

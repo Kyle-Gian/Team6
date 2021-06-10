@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 6659970536781963990}
   - component: {fileID: 7419716761425369337}
   - component: {fileID: 6409283926820432797}
+  - component: {fileID: 1770973322862405122}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -12386,6 +12387,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1770973322862405122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409283926820432799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}
+  floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
+  outer: 0
+  middle: 0
+  bullseye: 0
+  outerScore: 100
+  middleScore: 200
+  bullseyeScore: 500
 --- !u!1 &8366092446411624615
 GameObject:
   m_ObjectHideFlags: 0
@@ -36429,7 +36451,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8366092447660015919}
-  - component: {fileID: 8582109240232891118}
   m_Layer: 0
   m_Name: Hanging Target
   m_TagString: Untagged
@@ -36454,24 +36475,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8582109240232891118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8366092447660015916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
-  floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
-  outer: 0
-  middle: 0
-  bullseye: 0
-  outerScore: 100
-  middleScore: 200
-  bullseyeScore: 500
