@@ -9,7 +9,8 @@ public class CanSelfData : MonoBehaviour
     public AudioClip impact;
     AudioSource audioSource;
     Rigidbody rb;
-    public float velocity = 0.5f;
+    public float velocity = 1f;
+    
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class CanSelfData : MonoBehaviour
             audioSource.Play();
         }
 
-        if (other.gameObject.CompareTag("LoadableObject"))
+        if (other.gameObject.CompareTag("LoadableObject") && other.rigidbody.velocity.magnitude > velocity)
         {
             audioSource.clip = impact;
             audioSource.Play();
