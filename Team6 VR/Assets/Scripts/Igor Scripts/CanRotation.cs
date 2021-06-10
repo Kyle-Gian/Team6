@@ -82,6 +82,8 @@ public class CanRotation : MonoBehaviour
             }
         }
     }
+
+
     public void ShowScoreText(int score, Transform can)
     {
         GameObject points = Instantiate(floatingScore, can.position, Quaternion.identity);

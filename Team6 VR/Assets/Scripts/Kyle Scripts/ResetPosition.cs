@@ -22,14 +22,17 @@ public class ResetPosition : MonoBehaviour
         _startPos = transform.position;
         _startRotation = Quaternion.identity;
 
+        //Set up the unity events to change if object is in action
         _reloadWeapon = FindObjectOfType<ReloadWeapon>();
         _reloadWeapon.ObjectLoaded.AddListener(delegate { ObjectInAction(true); });
+        _reloadWeapon.ObjectShot.AddListener(delegate { ObjectInAction(false); });
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //Check the distance from start position, will trigger respawn after set time
         if (Vector3.Distance(transform.position, _startPos) > 1)
         {
             if (!_inAction)

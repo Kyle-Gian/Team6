@@ -37,7 +37,7 @@ public class CopyOfHitLocation : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.transform.CompareTag("Ball"))
+        if (other.transform.CompareTag("LoadableObject"))
         {
             // if (other.transform.GetComponent<Projectile>().nameOfFirstHitObject != transform.name/*player.firstHit == false*/)
             // {
