@@ -21,9 +21,15 @@ public class HitLocation : MonoBehaviour
     XRDirectInteractor _leftHandInteractor;
     XRDirectInteractor _rightHandInteractor;
 
+    BallShotAtTarget _shootChallenge;
+    BallThrownAtTarget _thrownChallenge;
+
     private void Start()
     {
         //FindObjectOfType<Player>().onEnemyHit += HitLocation_hitEvent;
+
+        _shootChallenge = FindObjectOfType<BallShotAtTarget>();
+        _thrownChallenge = FindObjectOfType<BallThrownAtTarget>();
 
         ss = FindObjectOfType<ScoreScreen>();
         ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
@@ -89,6 +95,24 @@ public class HitLocation : MonoBehaviour
                     ShowScoreText(bullseyeScore, other);
                 }
             }
+        }
+
+        if (transform.CompareTag("Main Target"))
+        {
+            //If both challenges have been completed skip this entire step
+            if (!_thrownChallenge._challengeComplete || !_shootChallenge._challengeComplete)
+            {
+                if (other.gameObject.GetComponent<Interactable>()._thrown)
+                {
+                    _thrownChallenge._challengeComplete = true;
+                }
+                else
+                {
+                    _shootChallenge._challengeComplete = true;
+                }
+            }
+
+
         }
     }
 

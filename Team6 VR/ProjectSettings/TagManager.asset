@@ -13,6 +13,7 @@ TagManager:
   - Hand
   - left
   - right
+  - Main Target
   layers:
   - Default
   - TransparentFX
