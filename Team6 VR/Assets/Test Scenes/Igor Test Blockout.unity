@@ -52753,6 +52753,8 @@ MonoBehaviour:
   cans2: []
   cans3: []
   cans4: []
+  allCans: []
+  allCansFallen: 0
   angle1: 45
   angle2: 315
   eulerAngles: {x: 0, y: 0, z: 0}
@@ -86644,9 +86646,9 @@ MonoBehaviour:
   colors:
   - {r: 1, g: 0, b: 0.14044952, a: 0}
   - {r: 0.05724919, g: 1, b: 0, a: 0}
-  - {r: 1, g: 0.8118372, b: 0, a: 0}
+  - {r: 1, g: 0.89922845, b: 0, a: 0}
   - {r: 1, g: 0, b: 0.8976784, a: 0}
-  - {r: 0, g: 0.45413113, b: 1, a: 0}
+  - {r: 0, g: 0.7942066, b: 1, a: 0}
   floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
   outer: 0.7
   middle: 0.4

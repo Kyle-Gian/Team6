@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
             onEnemyHit();
             //Debug.Log("reset");
         }
+        Destroy(newGameObject, 4f);
        
     }
 }

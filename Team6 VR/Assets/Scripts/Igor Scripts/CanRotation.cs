@@ -14,6 +14,10 @@ public class CanRotation : MonoBehaviour
     public List<Transform> cans2 = new List<Transform>();
     public List<Transform> cans3 = new List<Transform>();
     public List<Transform> cans4 = new List<Transform>();
+    public List<Transform> allCans = new List<Transform>();
+
+    public bool allCansFallen = false;
+
     public float angle1 = 45f;
     public float angle2 = 315f;
 
@@ -37,67 +41,97 @@ public class CanRotation : MonoBehaviour
 
             for (int j = 0; j < canStack.childCount; j++)
             {
-                if (i == 0)
-                {
-                    cans1.Add(canStack.GetChild(j));
-
-                }
-                else if (i == 1)
-                {
-                    cans2.Add(canStack.GetChild(j));
-
-                }
-                else if (i == 2)
-                {
-                    cans3.Add(canStack.GetChild(j));
-
-                }
-                else if (i == 3)
-                {
-                    cans4.Add(canStack.GetChild(j));
-
-                }
+                allCans.Add(canStack.GetChild(j));
             }
+
+            //for (int j = 0; j < canStack.childCount; j++)
+            //{
+            //    if (i == 0)
+            //    {
+            //        cans1.Add(canStack.GetChild(j));
+
+            //    }
+            //    else if (i == 1)
+            //    {
+            //        cans2.Add(canStack.GetChild(j));
+
+            //    }
+            //    else if (i == 2)
+            //    {
+            //        cans3.Add(canStack.GetChild(j));
+
+            //    }
+            //    else if (i == 3)
+            //    {
+            //        cans4.Add(canStack.GetChild(j));
+
+            //    }
+            //}
         }
     }
 
     private void Update()
     {
 
-        foreach (var c in cans4)
+        //foreach (var c in cans4)
+        //{
+        //    CanRotationCheck(c);
+        //}
+        //foreach (var c in cans3)
+        //{
+        //    CanRotationCheck(c);
+
+        //}
+        //foreach (var c in cans2)
+        //{
+        //    CanRotationCheck(c);
+        //}
+        //foreach (var c in cans1)
+        //{
+        //    CanRotationCheck(c);
+
+        //}
+
+        for (int i = 0; i < allCans.Count; i++)  
         {
-            CanRotationCheck(c);
-        }
-        foreach (var c in cans3)
-        {
-            CanRotationCheck(c);
+            if (!CanRotationCheck(allCans[i]))
+            {
+                break;
+            }
+            if (i == allCans.Count)
+            {
+                allCansFallen = true;
+            }
 
         }
-        foreach (var c in cans2)
+        if (allCansFallen)
         {
-            CanRotationCheck(c);
+            foreach (var c in allCans)
+            {
+                c.GetComponent<ResetCanPos>().ResetObjectPos();
+            }
+            allCansFallen = false;
         }
-        foreach (var c in cans1)
-        {
-            CanRotationCheck(c);
-        }
+
     }
 
 
-    public void CanRotationCheck(Transform can)
+    public bool CanRotationCheck(Transform can)
     {
         CanSelfData data = can.GetComponent<CanSelfData>();
-        
+
         if (!data.fallen)
         {
             if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2)
             {
                 data.fallen = true;
                 ShowScoreText(scoreValue, can);
+                return true;
                 //can.GetComponent<AudioSource>().clip = impact;
                 //can.GetComponent<AudioSource>().Play();
             }
         }
+        return false;
     }
 
 
@@ -111,7 +145,7 @@ public class CanRotation : MonoBehaviour
 
         int randomNumber = Random.Range(0, colors.Count);
 
-        text.color = new Color(colors[randomNumber].r, colors[randomNumber].g, colors[randomNumber].b,1);
+        text.color = new Color(colors[randomNumber].r, colors[randomNumber].g, colors[randomNumber].b, 1);
 
         GameObject points = Instantiate(floatingScore, can.position, Quaternion.identity);
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
