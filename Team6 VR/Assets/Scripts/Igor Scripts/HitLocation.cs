@@ -55,7 +55,7 @@ public class HitLocation : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.transform.CompareTag("Ball"))
+        if (other.transform.CompareTag("LoadableObject"))
         {
             if (firstHit == false)
             {
