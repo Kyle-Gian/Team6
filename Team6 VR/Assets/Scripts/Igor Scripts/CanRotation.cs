@@ -24,6 +24,8 @@ public class CanRotation : MonoBehaviour
     //public AudioClip impact;
     //AudioSource audioSource;
 
+
+
     public Vector3 eulerAngles;
 
     ScoreScreen ss;
@@ -92,46 +94,36 @@ public class CanRotation : MonoBehaviour
 
         //}
 
-        for (int i = 0; i < allCans.Count; i++)  
+        foreach (var c in allCans)
         {
-            if (!CanRotationCheck(allCans[i]))
+            CanRotationCheck(c);
+            if (c.GetComponent<CanSelfData>().numCansFallen.numberOfCansFallenOver == 36)
             {
-                break;
+                foreach (var can in allCans)
+                {
+                    can.GetComponent<ResetCanPos>().ResetObjectPos();
+                }
             }
-            if (i == allCans.Count)
-            {
-                allCansFallen = true;
-            }
-
-        }
-        if (allCansFallen)
-        {
-            foreach (var c in allCans)
-            {
-                c.GetComponent<ResetCanPos>().ResetObjectPos();
-            }
-            allCansFallen = false;
         }
 
     }
 
 
-    public bool CanRotationCheck(Transform can)
+    public void CanRotationCheck(Transform can)
     {
-        CanSelfData data = can.GetComponent<CanSelfData>();
+        CanSelfData canData = can.GetComponent<CanSelfData>();
 
-        if (!data.fallen)
+        if (!canData.fallen)
         {
             if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2)
             {
-                data.fallen = true;
+                canData.fallen = true;
+                canData.numCansFallen.numberOfCansFallenOver += 1;
                 ShowScoreText(scoreValue, can);
-                return true;
-                //can.GetComponent<AudioSource>().clip = impact;
-                //can.GetComponent<AudioSource>().Play();
+
             }
         }
-        return false;
+
     }
 
 

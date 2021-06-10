@@ -5,6 +5,7 @@ using UnityEngine;
 public class CanSelfData : MonoBehaviour
 {
     public bool fallen = false;
+    public CanFallenAmount numCansFallen;
 
     public AudioClip impact;
     AudioSource audioSource;
@@ -16,6 +17,7 @@ public class CanSelfData : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
+        
     }
 
     private void OnCollisionEnter(Collision other)

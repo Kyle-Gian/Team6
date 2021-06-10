@@ -1220,6 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallen: 0
+  numCansFallen: {fileID: 11400000, guid: d6c538190a132754bb2ea533c0a4c220, type: 2}
   impact: {fileID: 8300000, guid: 2a73ef45d4da3ca44a91fba52dd2687a, type: 3}
   velocity: 1
 --- !u!54 &6967110780049974418

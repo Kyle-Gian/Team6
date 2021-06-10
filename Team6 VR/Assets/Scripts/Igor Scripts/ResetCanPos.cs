@@ -7,7 +7,7 @@ public class ResetCanPos : MonoBehaviour
     Rigidbody rb;
     Vector3 startPos;
     Quaternion startRotation;
-
+    CanSelfData can;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +15,7 @@ public class ResetCanPos : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         startPos = transform.position;
         startRotation = transform.rotation;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        can = GetComponent<CanSelfData>();
         
     }
 
@@ -30,5 +25,7 @@ public class ResetCanPos : MonoBehaviour
         transform.rotation = startRotation;
         transform.position = startPos;
         rb.angularVelocity = Vector3.zero;
+        can.fallen = false;
+        can.numCansFallen.numberOfCansFallenOver -= 1;
     }
 }
