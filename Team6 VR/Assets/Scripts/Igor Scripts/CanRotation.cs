@@ -21,10 +21,7 @@ public class CanRotation : MonoBehaviour
     public float angle1 = 45f;
     public float angle2 = 315f;
 
-    //public AudioClip impact;
-    //AudioSource audioSource;
-
-
+    public CanFallenAmount numOfCansFallen;
 
     public Vector3 eulerAngles;
 
@@ -32,8 +29,12 @@ public class CanRotation : MonoBehaviour
 
     public int scoreValue;
 
+
+
     private void Start()
     {
+        numOfCansFallen.numberOfCansFallenOver = 0;
+
         ss = FindObjectOfType<ScoreScreen>();
         eulerAngles = transform.localEulerAngles;
 
@@ -97,11 +98,14 @@ public class CanRotation : MonoBehaviour
         foreach (var c in allCans)
         {
             CanRotationCheck(c);
-            if (c.GetComponent<CanSelfData>().numCansFallen.numberOfCansFallenOver == 36)
+            if (numOfCansFallen.numberOfCansFallenOver == 36)
             {
+                numOfCansFallen.numberOfCansFallenOver = 0;
                 foreach (var can in allCans)
                 {
                     can.GetComponent<ResetCanPos>().ResetObjectPos();
+                    can.GetComponentInChildren<Renderer>().material.color = Color.green;
+
                 }
             }
         }
@@ -120,6 +124,7 @@ public class CanRotation : MonoBehaviour
                 canData.fallen = true;
                 canData.numCansFallen.numberOfCansFallenOver += 1;
                 ShowScoreText(scoreValue, can);
+                can.GetComponentInChildren<Renderer>().material.color = Color.red;
 
             }
         }
@@ -144,4 +149,6 @@ public class CanRotation : MonoBehaviour
         ss.score += score;
         Destroy(points, 2f);
     }
+
+
 }

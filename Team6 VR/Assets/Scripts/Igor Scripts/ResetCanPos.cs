@@ -16,16 +16,23 @@ public class ResetCanPos : MonoBehaviour
         startPos = transform.position;
         startRotation = transform.rotation;
         can = GetComponent<CanSelfData>();
+
         
     }
 
     public void ResetObjectPos()
     {
+        StartCoroutine(WaitToResetCans());
+    }
+
+
+    public IEnumerator WaitToResetCans()
+    {
+        yield return new WaitForSeconds(3f);
         rb.velocity = Vector3.zero;
         transform.rotation = startRotation;
         transform.position = startPos;
         rb.angularVelocity = Vector3.zero;
         can.fallen = false;
-        can.numCansFallen.numberOfCansFallenOver -= 1;
     }
 }

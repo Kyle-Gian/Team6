@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b7514a3fc2dfb489fa2a4ba7fcb67c, type: 3}
   m_Name: CanData
   m_EditorClassIdentifier: 
-  numberOfCansFallenOver: 33
+  numberOfCansFallenOver: 0
