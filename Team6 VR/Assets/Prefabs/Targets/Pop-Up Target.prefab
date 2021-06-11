@@ -12222,7 +12222,7 @@ GameObject:
   - component: {fileID: 3084972752797464282}
   m_Layer: 0
   m_Name: Pop-Up Target
-  m_TagString: Untagged
+  m_TagString: PopUpTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36325,8 +36325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53020bb35cdadec4b935cf327af055a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftHand: {fileID: 0}
-  _rightHand: {fileID: 0}
   floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
   outer: 0
   middle: 0
@@ -36334,3 +36332,5 @@ MonoBehaviour:
   outerScore: 100
   middleScore: 200
   bullseyeScore: 500
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}

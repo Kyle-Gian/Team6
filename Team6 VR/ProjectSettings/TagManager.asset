@@ -14,6 +14,7 @@ TagManager:
   - left
   - right
   - Main Target
+  - PopUpTarget
   layers:
   - Default
   - TransparentFX

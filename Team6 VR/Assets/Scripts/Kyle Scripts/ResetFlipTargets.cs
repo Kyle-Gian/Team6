@@ -12,32 +12,49 @@ public class ResetFlipTargets : MonoBehaviour
     List<GameObject> _targets = new List<GameObject>();
     List<Animator> _targetAnimator = new List<Animator>();
 
-    public string _hingeTagName;
+    string _hingeTagName;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _hingeTagName = "PopUpTarget";
+
         if (_hingeTagName != null)
         {
             _targets = GameObject.FindGameObjectsWithTag(_hingeTagName).ToList();
 
             foreach (var item in _targets)
             {
-                _targetAnimator.Add(item.GetComponent<Animator>());
-            }
-
+                _targetAnimator.Add(item.GetComponentInParent<Animator>());
+                item.GetComponentInParent<SmallTargetKnockedDown>().AreAllTargetsKnocked.AddListener(CheckTargetsNeedToBeReset);
+            }            
         }
-
     }
 
     public void ResetTargets()
     {
         for (int i = 0; i < _targets.Count; i++)
         {
-            Animator animator = _targets[i].GetComponent<Animator>();
+            Animator animator = _targetAnimator[i];
             animator.SetBool("reset", true);
             animator.SetBool("knockDown", false);
         }
+    }
+
+    public void CheckTargetsNeedToBeReset()
+    {
+        for (int i = 0; i < _targets.Count; i++)
+        {
+            if (!_targets[i].GetComponentInParent<SmallTargetKnockedDown>()._targetKnocked)
+            {
+                break;
+            }
+
+            if (i == _targets.Count)
+            {
+                ResetTargets();
+            }
+        }          
     }
 }

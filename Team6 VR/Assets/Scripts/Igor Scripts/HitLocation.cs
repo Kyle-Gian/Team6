@@ -47,7 +47,7 @@ public class HitLocation : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Left hand has not been attached, Check Tag on left hand controller");
+            Debug.LogWarning("Left hand has not been attached, Check Tag on left hand controller");
 
         }
         if (_rightHand != null)
@@ -59,7 +59,7 @@ public class HitLocation : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Right hand has not been attached, Check Tag on Right hand controller");
+            Debug.LogWarning("Right hand has not been attached, Check Tag on Right hand controller");
 
         }
     }
