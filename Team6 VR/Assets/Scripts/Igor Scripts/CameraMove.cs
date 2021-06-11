@@ -149,6 +149,7 @@ public class CameraMove : MonoBehaviour
 
         //Set the target rotation based on the mouse delta position and our rotation speed
         _rotationTarget *= Quaternion.AngleAxis(_mouseDelta.x * Time.deltaTime * RotationSpeed, Vector3.up);
+        _rotationTarget *= Quaternion.AngleAxis(_mouseDelta.y * Time.deltaTime * RotationSpeed, Vector3.right);
 
         //Slerp the camera rig's rotation based on the new target
         transform.rotation = Quaternion.Slerp(transform.rotation, _rotationTarget, Time.deltaTime * InternalRotationSpeed);
