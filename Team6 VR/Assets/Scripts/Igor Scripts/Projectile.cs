@@ -30,6 +30,7 @@ public class Projectile : MonoBehaviour
             audioSource.clip = impact;
             audioSource.Play();
             Instantiate(particleEffect, transform.position, Quaternion.identity);
+            Debug.Log(other.gameObject.name);
         }
 
     }
