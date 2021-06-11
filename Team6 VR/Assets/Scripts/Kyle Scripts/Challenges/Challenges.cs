@@ -8,11 +8,12 @@ public class Challenges : MonoBehaviour
 {
     public string _challenge;
     public bool _challengeComplete;
-    private TextMeshPro _text;
+    [HideInInspector] public  TextMeshPro _text;
     public UnityEvent ChallengeCompleted;
     private void Start()
     {
         _challengeComplete = false;
+        _text = GetComponent<TextMeshPro>();
         _text.text = _challenge;
     }
     public void ChallengeComplete()

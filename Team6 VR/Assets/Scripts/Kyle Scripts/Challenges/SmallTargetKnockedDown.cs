@@ -16,7 +16,7 @@ public class SmallTargetKnockedDown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _animator =  GetComponentInParent<Animator>();
+        _animator = GetComponentInParent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -30,8 +30,6 @@ public class SmallTargetKnockedDown : MonoBehaviour
                 _animator.SetBool("knockDown", true);
                 AreAllTargetsKnocked.Invoke();
             }
-
         }
     }
-
 }
