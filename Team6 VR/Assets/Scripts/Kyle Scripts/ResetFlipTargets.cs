@@ -10,11 +10,8 @@ using System.Linq;
 public class ResetFlipTargets : MonoBehaviour
 {
     List<GameObject> _targets = new List<GameObject>();
-    List<GameObject> _bottles = new List<GameObject>();
-    List<Vector3> _bottlePositions = new List<Vector3>();
     List<Animator> _targetAnimator = new List<Animator>();
 
-    public string _bottleTagName;
     public string _hingeTagName;
 
 
@@ -31,25 +28,7 @@ public class ResetFlipTargets : MonoBehaviour
             }
 
         }
-        if (_bottleTagName != null)
-        {
-            _bottles = GameObject.FindGameObjectsWithTag(_bottleTagName).ToList();
 
-            foreach (var item in _bottles)
-            {
-                _bottlePositions.Add(item.transform.position);
-            }
-
-        }
-
-    }
-
-    public void ResetBottles()
-    {
-        for (int i = 0; i < _bottles.Count; i++)
-        {
-            _bottles[i].transform.position = _bottlePositions[i];
-        }
     }
 
     public void ResetTargets()

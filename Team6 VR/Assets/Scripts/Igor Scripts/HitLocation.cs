@@ -23,6 +23,7 @@ public class HitLocation : MonoBehaviour
 
     BallShotAtTarget _shootChallenge;
     BallThrownAtTarget _thrownChallenge;
+    WeaponThrownAtTarget _weaponThrownChallenge;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class HitLocation : MonoBehaviour
 
         _shootChallenge = FindObjectOfType<BallShotAtTarget>();
         _thrownChallenge = FindObjectOfType<BallThrownAtTarget>();
+        _weaponThrownChallenge = FindObjectOfType<WeaponThrownAtTarget>();
 
         ss = FindObjectOfType<ScoreScreen>();
         ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
@@ -100,19 +102,26 @@ public class HitLocation : MonoBehaviour
         if (transform.CompareTag("Main Target"))
         {
             //If both challenges have been completed skip this entire step
-            if (!_thrownChallenge._challengeComplete || !_shootChallenge._challengeComplete)
+            if (!_thrownChallenge._challengeComplete || !_shootChallenge._challengeComplete || !_weaponThrownChallenge._challengeComplete)
             {
-                if (other.gameObject.GetComponent<Interactable>()._thrown)
+                if (other.transform.CompareTag("LoadableObject"))
                 {
-                    _thrownChallenge._challengeComplete = true;
+                    if (other.gameObject.GetComponent<Interactable>()._thrown)
+                    {
+                        _thrownChallenge.ChallengeComplete();
+                    }
+                    else
+                    {
+                        _shootChallenge.ChallengeComplete();
+                    }
                 }
-                else
-                {
-                    _shootChallenge._challengeComplete = true;
-                }
+
             }
+            if (other.transform.CompareTag("Gun"))
+            {
 
-
+                _weaponThrownChallenge.ChallengeComplete();
+            }
         }
     }
 

@@ -61,11 +61,6 @@ public class Interactable : MonoBehaviour
     public void ObjectHasHitTargetOnThrow(SelectEnterEventArgs test)
     {
     }
-    private void OnDisable()
-    {
-        reloadWeapon = FindObjectOfType<ReloadWeapon>();
-        reloadWeapon.ObjectLoaded.RemoveListener(delegate { ObjectThrown(false); });
-    }
 
     //Added to grab interactable on the gameobject, if object picked up set thrown to true.
     //When loaded in gun, set false. Used for challenges

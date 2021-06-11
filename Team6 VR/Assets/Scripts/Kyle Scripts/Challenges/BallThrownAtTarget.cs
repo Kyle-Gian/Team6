@@ -14,9 +14,8 @@ public class BallThrownAtTarget : Challenges
 
     }
 
-    // Update is called once per frame
-    void Update()
+    void ChallengeIsCompleted()
     {
-        
+        _challengeComplete = true;
     }
 }
