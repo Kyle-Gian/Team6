@@ -38,10 +38,11 @@ public class ReloadWeapon : MonoBehaviour
         if (other.CompareTag("LoadableObject") && _loadedObjects.Count < _gunCapacity)
         {
             //Alex's Addition
-            shrinkScript.loadedItems.Add(other.gameObject);
+            shrinkScript.loadedItems.Add(other.transform.parent.gameObject);
             shrinkScript.shrink = true;
-            _loadedObjects.Add(other.gameObject);
+            _loadedObjects.Add(other.transform.parent.gameObject);
             Invoke("HideLoadedItem", 0.5f);
+
             //ObjectLoaded.Invoke();
             //_loadedObjects.Add(other.gameObject);
             //other.gameObject.SetActive(false);
@@ -51,10 +52,11 @@ public class ReloadWeapon : MonoBehaviour
     //Also Alex's Stuff
     void HideLoadedItem()
     {
+        shrinkScript.loadedItems[0].gameObject.SetActive(false);
         shrinkScript.loadedItems.RemoveAt(0);
         shrinkScript.shrink = false;
         ObjectLoaded.Invoke();
-        shrinkScript.loadedItems[0].gameObject.SetActive(false);
+        
 
     }
 

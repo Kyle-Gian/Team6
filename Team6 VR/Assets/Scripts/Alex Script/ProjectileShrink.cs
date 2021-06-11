@@ -9,17 +9,19 @@ public class ProjectileShrink : MonoBehaviour
     public float shrinkSpeed;
     public float movementSpeed;
 
-    [HideInInspector]
     public List<GameObject> loadedItems;
+
+    public List<GameObject> shotItems;
 
     [HideInInspector]
     public bool shrink;
 
-    private AudioSource audio;
+    [HideInInspector]
+    public AudioSource _audio;
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -30,18 +32,21 @@ public class ProjectileShrink : MonoBehaviour
 
     void OnLoad()
     {
-        if(audio.clip == null)
+        if(_audio.clip == null)
         {
             Debug.Log("Missing Audio Clip!");
         }
 
-        if (!audio.isPlaying)
+        if (!_audio.isPlaying)
         {
-            audio.Play();
+            _audio.Play();
         }
+
         foreach (GameObject item in loadedItems)
         {
+            item.GetComponentInChildren<Collider>().enabled = false;
             item.GetComponent<Rigidbody>().isKinematic = true;
+
 
             //Shrink
             item.transform.localScale = Vector3.Lerp(item.transform.localScale, item.transform.localScale * 0.1f, shrinkSpeed * Time.deltaTime);
@@ -49,6 +54,11 @@ public class ProjectileShrink : MonoBehaviour
             //Move
             item.transform.position = Vector3.Lerp(item.transform.position, this.transform.position, movementSpeed * Time.deltaTime);
         }
+
+    }
+
+    void OnShoot()
+    {
 
     }
 }
