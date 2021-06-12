@@ -15,6 +15,7 @@ TagManager:
   - right
   - Main Target
   - PopUpTarget
+  - Ring
   layers:
   - Default
   - TransparentFX
