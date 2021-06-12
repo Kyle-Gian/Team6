@@ -36,6 +36,9 @@ public class HitLocation : MonoBehaviour
         ss = FindObjectOfType<ScoreScreen>();
         ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
         reloadWeapon.ObjectLoaded.AddListener(HitLocation_hitEvent);
+        
+        _leftHand = GameObject.FindWithTag("left");
+        _rightHand = GameObject.FindWithTag("right");
 
         //If either the left or right hand are null throw an error for the user
         if (_leftHand != null)
