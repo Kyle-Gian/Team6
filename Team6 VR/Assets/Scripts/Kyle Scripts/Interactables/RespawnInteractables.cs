@@ -20,6 +20,7 @@ public class RespawnInteractables : MonoBehaviour
     {
         _startPosition = _button.position;
         _interactables = GameObject.FindGameObjectsWithTag("LoadableObject").ToList();
+        _weapon = GameObject.FindGameObjectWithTag("Gun");
     }
 
     private void Update()
