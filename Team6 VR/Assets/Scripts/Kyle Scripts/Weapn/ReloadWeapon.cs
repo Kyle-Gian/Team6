@@ -11,7 +11,7 @@ using UnityEngine.Events;
 public class ReloadWeapon : MonoBehaviour
 {
     [HideInInspector]public UnityEvent ObjectLoaded;
-    [HideInInspector] public UnityEvent ObjectShot;
+    [HideInInspector]public UnityEvent ObjectShot;
 
     public List<GameObject> _loadedObjects = new List<GameObject>();
     public int _gunCapacity = 2;
@@ -20,14 +20,11 @@ public class ReloadWeapon : MonoBehaviour
 
     private void OnEnable()
     {
-        if (ObjectLoaded == null)
-        {
+
             ObjectLoaded = new UnityEvent();
-        }
-        if (ObjectShot == null)
-        {
+            
             ObjectShot = new UnityEvent();
-        }
+        
         _loadedObjects.Capacity = _gunCapacity;
 
         shrinkScript = GetComponentInChildren<ProjectileShrink>();
@@ -38,14 +35,16 @@ public class ReloadWeapon : MonoBehaviour
         if (other.CompareTag("LoadableObject") && _loadedObjects.Count < _gunCapacity)
         {
             //Alex's Addition
-            shrinkScript.loadedItems.Add(other.transform.parent.gameObject);
-            shrinkScript.shrink = true;
-            _loadedObjects.Add(other.transform.parent.gameObject);
-            Invoke("HideLoadedItem", 0.5f);
+            //shrinkScript.loadedItems.Add(other.transform.parent.gameObject);
+            //shrinkScript.shrink = true;
+            _loadedObjects.Add(other.gameObject);
+            //Invoke("HideLoadedItem", 0.5f);
 
             //ObjectLoaded.Invoke();
             //_loadedObjects.Add(other.gameObject);
-            //other.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+            ObjectLoaded.Invoke();
+
         }
     }
 
@@ -55,8 +54,6 @@ public class ReloadWeapon : MonoBehaviour
         shrinkScript.loadedItems[0].gameObject.SetActive(false);
         shrinkScript.loadedItems.RemoveAt(0);
         shrinkScript.shrink = false;
-        ObjectLoaded.Invoke();
-        
 
     }
 

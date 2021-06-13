@@ -28,10 +28,11 @@ public class ShootFromGun : MonoBehaviour
                 //If the button has been pressed then shoot the bullet at the barrel position with the set speed
                 if (GunButtonPress.ButtonPressed() && !_weaponShot)
                 {
+                    Rigidbody objRB = obj.GetComponentInChildren<Rigidbody>();
                     _weaponShot = true;
                     obj.transform.position = _barrel.position;
                     obj.SetActive(true);
-                    obj.GetComponent<Rigidbody>().velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed));
+                    objRB.velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed));
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
                     StartCoroutine("CanShoot");
                 }
