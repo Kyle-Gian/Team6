@@ -15,9 +15,14 @@ public class GunButtonPress : MonoBehaviour
         return _buttonPressed;
     }
 
-    public void TriggerIn(bool triggerPressed)
+    public void TriggerIn()
     {
-        _buttonPressed = triggerPressed;
+        _buttonPressed = true;
+
+    }
+    public void TriggerOut()
+    {
+        _buttonPressed = false;
 
     }
 }

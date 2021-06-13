@@ -44,7 +44,7 @@ public class ProjectileShrink : MonoBehaviour
 
         foreach (GameObject item in loadedItems)
         {
-            item.GetComponentInChildren<Collider>().enabled = false;
+            //item.GetComponentInChildren<Collider>().enabled = false;
             item.GetComponent<Rigidbody>().isKinematic = true;
 
 

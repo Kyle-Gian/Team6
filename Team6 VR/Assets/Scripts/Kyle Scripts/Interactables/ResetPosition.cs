@@ -24,8 +24,8 @@ public class ResetPosition : MonoBehaviour
 
         //Set up the unity events to change if object is in action
         _reloadWeapon = FindObjectOfType<ReloadWeapon>();
-        _reloadWeapon.ObjectLoaded.AddListener(delegate { ObjectInAction(true); });
-        _reloadWeapon.ObjectShot.AddListener(delegate { ObjectInAction(false); });
+        _reloadWeapon.ObjectLoaded.AddListener(ObjectInAction);
+        _reloadWeapon.ObjectShot.AddListener(ObjectNotInAction);
 
     }
 
@@ -63,9 +63,13 @@ public class ResetPosition : MonoBehaviour
         ResetObjectPos();
     }
 
-    public void ObjectInAction(bool inAction)
+    public void ObjectInAction()
     {
-        _inAction = inAction;
+        _inAction = true;
+    }
+    public void ObjectNotInAction()
+    {
+        _inAction = false;
     }
     
     
