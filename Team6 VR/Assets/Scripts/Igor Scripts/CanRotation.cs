@@ -10,10 +10,10 @@ public class CanRotation : MonoBehaviour
 
     public GameObject floatingScore;
 
-    public List<Transform> cans1 = new List<Transform>();
-    public List<Transform> cans2 = new List<Transform>();
-    public List<Transform> cans3 = new List<Transform>();
-    public List<Transform> cans4 = new List<Transform>();
+    //public List<Transform> cans1 = new List<Transform>();
+    //public List<Transform> cans2 = new List<Transform>();
+    //public List<Transform> cans3 = new List<Transform>();
+    //public List<Transform> cans4 = new List<Transform>();
     public List<Transform> allCans = new List<Transform>();
 
     public bool allCansFallen = false;
@@ -122,7 +122,7 @@ public class CanRotation : MonoBehaviour
             if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2)
             {
                 canData.fallen = true;
-                canData.numCansFallen.numberOfCansFallenOver += 1;
+                numOfCansFallen.numberOfCansFallenOver += 1;
                 ShowScoreText(scoreValue, can);
                 can.GetComponentInChildren<Renderer>().material.color = Color.red;
 

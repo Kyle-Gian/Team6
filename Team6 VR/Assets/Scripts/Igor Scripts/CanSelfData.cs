@@ -5,7 +5,7 @@ using UnityEngine;
 public class CanSelfData : MonoBehaviour
 {
     public bool fallen = false;
-    public CanFallenAmount numCansFallen;
+    //public CanFallenAmount numCansFallen;
 
     public AudioClip impact;
     AudioSource audioSource;
