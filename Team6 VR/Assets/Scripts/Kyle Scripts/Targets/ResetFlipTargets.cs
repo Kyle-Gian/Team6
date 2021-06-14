@@ -29,7 +29,7 @@ public class ResetFlipTargets : MonoBehaviour
             foreach (var item in _targets)
             {
                 _targetAnimator.Add(item.GetComponentInParent<Animator>());
-                item.GetComponent<SmallTargetKnockedDown>().AreAllTargetsKnocked.AddListener(CheckTargetsNeedToBeReset);
+                item.GetComponentInChildren<SmallTargetKnockedDown>().AreAllTargetsKnocked.AddListener(CheckTargetsNeedToBeReset);
             }            
         }
     }
@@ -48,7 +48,7 @@ public class ResetFlipTargets : MonoBehaviour
     {
         for (int i = 0; i < _targets.Count; i++)
         {
-            if (!_targets[i].GetComponentInParent<SmallTargetKnockedDown>()._targetKnocked)
+            if (!_targets[i].GetComponentInChildren<SmallTargetKnockedDown>()._targetKnocked)
             {
                 break;
             }

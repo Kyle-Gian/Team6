@@ -24393,6 +24393,7 @@ GameObject:
   - component: {fileID: 8589345490095024264}
   - component: {fileID: 5595628840275022503}
   - component: {fileID: 405993532085368276}
+  - component: {fileID: 11898837}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -36334,3 +36335,19 @@ MonoBehaviour:
   bullseyeScore: 500
   _leftHand: {fileID: 0}
   _rightHand: {fileID: 0}
+--- !u!114 &11898837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335549502085915073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b29c570108f70d4aa1f7d1a46bf9d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetKnocked: 0
+  AreAllTargetsKnocked:
+    m_PersistentCalls:
+      m_Calls: []
