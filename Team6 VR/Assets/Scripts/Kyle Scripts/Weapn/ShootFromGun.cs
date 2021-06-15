@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShootFromGun : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class ShootFromGun : MonoBehaviour
     [SerializeField] private float _shootingSpeed = 200;
     private bool _weaponShot = false;
     public Transform _barrel;
+
+    public UnityEvent ObjectShotFromGun;
     // Start is called before the first frame update
     void Start()
     {
         _ReloadWeapon = GetComponent<ReloadWeapon>();
+        ObjectShotFromGun = new UnityEvent();
     }
 
     // Update is called once per frame
@@ -44,7 +48,7 @@ public class ShootFromGun : MonoBehaviour
 
     IEnumerator CanShoot()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         _weaponShot = false;
     }
 }

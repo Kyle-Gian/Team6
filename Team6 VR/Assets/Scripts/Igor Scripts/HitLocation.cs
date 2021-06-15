@@ -37,6 +37,9 @@ public class HitLocation : MonoBehaviour
         ReloadWeapon reloadWeapon = FindObjectOfType<ReloadWeapon>();
         reloadWeapon.ObjectLoaded.AddListener(HitLocation_hitEvent);
         
+        ShootFromGun shootWeapon = FindObjectOfType<ShootFromGun>();
+        shootWeapon.ObjectShotFromGun.AddListener(HitLocation_hitEvent);
+        
         _leftHand = GameObject.FindWithTag("left");
         _rightHand = GameObject.FindWithTag("right");
 
@@ -80,26 +83,55 @@ public class HitLocation : MonoBehaviour
     {
         if (other.transform.CompareTag("LoadableObject"))
         {
-            if (firstHit == false)
+            //Check if the target is a pop up target due to knock down check
+            if (transform.CompareTag("PopUpTarget"))
             {
-                float dis = Vector3.Distance(other.contacts[0].point, transform.position);
+                //check if the target has been knocked down before adding points
+                if (!firstHit && !GetComponent<SmallTargetKnockedDown>()._targetKnocked)
+                {
+                    float dis = Vector3.Distance(other.contacts[0].point, transform.position);
 
-                hit++;
-                Debug.Log("Hit" + hit);
-                firstHit = true;
-                if (dis > outer)
-                {
-                    ShowScoreText(outerScore, other);
-                }
-                else if (dis > middle)
-                {
-                    ShowScoreText(middleScore, other);
-                }
-                else if (dis > bullseye)
-                {
-                    ShowScoreText(bullseyeScore, other);
+                    hit++;
+                    Debug.Log("Hit" + hit);
+                    firstHit = true;
+                    if (dis > outer)
+                    {
+                        ShowScoreText(outerScore, other);
+                    }
+                    else if (dis > middle)
+                    {
+                        ShowScoreText(middleScore, other);
+                    }
+                    else if (dis > bullseye)
+                    {
+                        ShowScoreText(bullseyeScore, other);
+                    }
                 }
             }
+            else
+            {
+                if (firstHit == false)
+                {
+                    float dis = Vector3.Distance(other.contacts[0].point, transform.position);
+
+                    hit++;
+                    Debug.Log("Hit" + hit);
+                    firstHit = true;
+                    if (dis > outer)
+                    {
+                        ShowScoreText(outerScore, other);
+                    }
+                    else if (dis > middle)
+                    {
+                        ShowScoreText(middleScore, other);
+                    }
+                    else if (dis > bullseye)
+                    {
+                        ShowScoreText(bullseyeScore, other);
+                    }
+                }
+            }
+            
         }
 
         if (transform.CompareTag("Main Target"))

@@ -9,8 +9,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Interactable : MonoBehaviour
 {
     [HideInInspector] public Vector3 _startPosition;
-    public ParticleSystem _collisionParticle;
-    public ParticleSystem _trailParticle;
     [HideInInspector] public bool _thrown;
 
     ReloadWeapon reloadWeapon;
