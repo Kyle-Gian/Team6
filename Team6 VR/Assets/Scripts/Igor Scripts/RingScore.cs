@@ -5,6 +5,8 @@ using TMPro;
 
 public class RingScore : MonoBehaviour
 {
+    public List<Color> colors = new List<Color>();
+
     ScoreScreen ss;
     public GameObject floatingScore;
     public int scoreValue;
@@ -22,11 +24,12 @@ public class RingScore : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball"))
+        if (other.CompareTag("LoadableObject"))
         {
-            GameObject points = Instantiate(floatingScore, transform.position, Quaternion.identity);
-            points.transform.GetChild(0).GetComponent<TextMeshPro>().text = scoreValue.ToString();
-            ss.score += scoreValue;
+            //GameObject points = Instantiate(floatingScore, transform.position, Quaternion.identity);
+            //points.transform.GetChild(0).GetComponent<TextMeshPro>().text = scoreValue.ToString();
+            //ss.score += scoreValue;
+            ShowScoreText(scoreValue);
 
             if (!_RingActive)
             {
@@ -45,4 +48,20 @@ public class RingScore : MonoBehaviour
             _ringsChallenge.ChallengeComplete();
         }
     }
+
+    public void ShowScoreText(int score)
+    {
+        TextMeshPro text = floatingScore.transform.GetChild(0).GetComponent<TextMeshPro>();
+
+        int randomNumber = Random.Range(0, colors.Count);
+
+        text.color = new Color(colors[randomNumber].r, colors[randomNumber].g, colors[randomNumber].b, 1);
+
+        GameObject points = Instantiate(floatingScore, transform.position, Quaternion.identity);
+        points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
+        ss.score += score;
+        Destroy(points, 2f);
+    }
+
 }
+

@@ -184,6 +184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca0a5a99c43c744787fdd43b5549752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 0, b: 0.21010542, a: 0}
+  - {r: 0, g: 1, b: 0.26698303, a: 0}
+  - {r: 1, g: 0.8955504, b: 0, a: 0}
+  - {r: 0, g: 0.8877015, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0.60640574, a: 0}
   floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
   scoreValue: 10
   _RingActive: 0
