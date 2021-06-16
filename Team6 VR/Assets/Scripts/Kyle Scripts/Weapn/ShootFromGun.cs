@@ -42,8 +42,10 @@ public class ShootFromGun : MonoBehaviour
                     obj.GetComponent<Collider>().enabled = true;
                     objRB.isKinematic = false;
                     obj.transform.localScale = new Vector3(1, 1, 1);
+                    
+                    ObjectShotFromGun.Invoke();
 
-                    objRB.velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed));
+                    objRB.velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed * 100 * Time.deltaTime));
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
                     StartCoroutine("CanShoot");
 

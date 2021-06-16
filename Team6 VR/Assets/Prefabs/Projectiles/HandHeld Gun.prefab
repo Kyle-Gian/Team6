@@ -143,7 +143,9 @@ MonoBehaviour:
   shrinkSpeed: 10
   movementSpeed: 10
   loadedItems: []
+  shotItems: []
   shrink: 0
+  _audio: {fileID: 0}
 --- !u!1 &2059527467154905683
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,13 +314,14 @@ GameObject:
   - component: {fileID: 7652629350278198007}
   - component: {fileID: 3635939329332736363}
   - component: {fileID: 2572777308059472159}
-  - component: {fileID: 316070219661211006}
   - component: {fileID: 3455273575716814602}
   - component: {fileID: 3554642060844623055}
   - component: {fileID: 5712475060919329664}
+  - component: {fileID: 727388903}
+  - component: {fileID: 727388907}
   m_Layer: 0
   m_Name: HandHeld Gun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -371,148 +374,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &316070219661211006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2894658820911479170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CustomReticle: {fileID: 0}
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5712475060919329664}
-        m_TargetAssemblyTypeName: GunButtonPress, Assembly-CSharp
-        m_MethodName: TriggerIn
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ResetPosition, Assembly-CSharp
-        m_MethodName: ObjectInAction
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5712475060919329664}
-        m_TargetAssemblyTypeName: GunButtonPress, Assembly-CSharp
-        m_MethodName: TriggerIn
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_AttachTransform: {fileID: 7563863116541422066}
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
 --- !u!114 &3455273575716814602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,8 +386,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae96ba32bc173fb449a4003d782116ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shootingSpeed: 200
+  _shootingSpeed: 5
   _barrel: {fileID: 2328431454211978078}
+  ObjectShotFromGun:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3554642060844623055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +447,149 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ff63d1dd46d8644bbff7ceefdd8ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &727388903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894658820911479170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034acf557be54ea4e8c616c9517ad66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waitTime: 5
+--- !u!114 &727388907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894658820911479170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78780b31dd7e9746912029faeab897d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CustomReticle: {fileID: 0}
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5712475060919329664}
+        m_TargetAssemblyTypeName: GunButtonPress, Assembly-CSharp
+        m_MethodName: TriggerIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5712475060919329664}
+        m_TargetAssemblyTypeName: GunButtonPress, Assembly-CSharp
+        m_MethodName: TriggerOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_AttachTransform: {fileID: 0}
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 2
+  m_VelocityDamping: 1
+  m_VelocityScale: 1
+  m_AngularVelocityDamping: 1
+  m_AngularVelocityScale: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_ForceGravityOnDetach: 0
+  m_RetainTransformParent: 1
+  m_AttachPointCompatibilityMode: 0
 --- !u!1 &3263918221293499184
 GameObject:
   m_ObjectHideFlags: 0
