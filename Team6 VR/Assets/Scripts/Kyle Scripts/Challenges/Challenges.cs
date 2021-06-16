@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-
+//Base class used for all challenges
 [System.Serializable]
 public class Challenges : MonoBehaviour
 {

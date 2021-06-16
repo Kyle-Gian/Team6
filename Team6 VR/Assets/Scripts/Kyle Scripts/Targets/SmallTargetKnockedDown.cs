@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
+// Checks if a Pop up target has been knocked and changes the animation
 public class SmallTargetKnockedDown : MonoBehaviour
 {
     public bool _targetKnocked = false;
