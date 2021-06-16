@@ -21,17 +21,18 @@ public class DartProjectile : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
-        
+        sfg = FindObjectOfType<ShootFromGun>();
+
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (rb.velocity.magnitude > velocity)
+        if (rb.velocity.magnitude > velocity && sfg._weaponShot)
         {
-            audioSource.clip = impact;
-            audioSource.Play();
-            Instantiate(particleEffect, transform.position, Quaternion.identity);
-            //if(sfg._weaponShot)
+            //audioSource.clip = impact;
+            //audioSource.Play();
+            //Instantiate(particleEffect, transform.position, Quaternion.identity);
+            if(sfg._weaponShot)
             rb.isKinematic = true;
         }
 
