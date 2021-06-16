@@ -15,6 +15,7 @@ public class DartProjectile : MonoBehaviour
     Rigidbody rb;
     public UnityEvent ProjectileHit;
     ShootFromGun sfg;
+    public bool hitSomething = false;
 
 
     private void Start()
@@ -22,19 +23,49 @@ public class DartProjectile : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         sfg = FindObjectOfType<ShootFromGun>();
+        transform.rotation = Quaternion.LookRotation(rb.velocity);
 
+    }
+
+    private void Update()
+    {
+        if (!hitSomething)
+            transform.rotation = Quaternion.LookRotation(rb.velocity);
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (rb.velocity.magnitude > velocity && sfg._weaponShot)
+        // if (!other.gameObject.CompareTag("Gun")) // Or could be "Barrel"
+        //rb.isKinematic = true;
+        //if (rb.velocity.magnitude > velocity /*&& sfg._weaponShot*/)
+        //{
+        //audioSource.clip = impact;
+        //audioSource.Play();
+        //Instantiate(particleEffect, transform.position, Quaternion.identity);
+        //if (sfg._weaponShot)
+        //transform.SetParent(other.transform, true);
+        //Destroy(gameObject);
+        //  Debug.Log("dart hit can");
+        // }
+        if (!other.gameObject.CompareTag("Gun"))
         {
-            //audioSource.clip = impact;
-            //audioSource.Play();
-            //Instantiate(particleEffect, transform.position, Quaternion.identity);
-            if(sfg._weaponShot)
-            rb.isKinematic = true;
+            hitSomething = true;
+            Stick();
+            if (other.gameObject.CompareTag("Can"))
+            {
+                transform.SetParent(other.transform);
+                Debug.Log(other.gameObject.name);
+
+            }
+            //if (rb != null)
+            //    rb.isKinematic = true;
+            //Debug.Log(other.gameObject.name);
         }
 
+    }
+
+    private void Stick()
+    {
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 }

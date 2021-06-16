@@ -17,6 +17,7 @@ TagManager:
   - PopUpTarget
   - Ring
   - Gun
+  - Can
   layers:
   - Default
   - TransparentFX

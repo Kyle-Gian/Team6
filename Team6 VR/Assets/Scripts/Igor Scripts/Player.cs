@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
     {
         //firstHit = false;
         Ray mouseRay = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        GameObject newGameObject = (GameObject)Instantiate(projectile, mouseRay.origin, Quaternion.identity);
+        GameObject newGameObject = Instantiate(projectile, mouseRay.origin/*gunEnd.position*/, Quaternion.identity);
         Rigidbody rb = newGameObject.GetComponent<Rigidbody>();
 
         if (rb != null)
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
             onEnemyHit();
             //Debug.Log("reset");
         }
-        Destroy(newGameObject, 4f);
+        //Destroy(newGameObject, 1f);
        
     }
 }
