@@ -73,26 +73,32 @@ public class ReloadWeapon : MonoBehaviour
             {
                 _rightHandInteractor.attachTransform.DetachChildren();
             }
-            //Alex's Addition
-            //shrinkScript.loadedItems.Add(other.transform.parent.gameObject);
-            //shrinkScript.shrink = true;
-            _loadedObjects.Add(other.gameObject);
-            //Invoke("HideLoadedItem", 0.5f);
 
+            //_loadedObjects.Add(other.gameObject);
             //ObjectLoaded.Invoke();
             //_loadedObjects.Add(other.gameObject);
-            other.gameObject.SetActive(false);
-            ObjectLoaded.Invoke();
+            //other.gameObject.SetActive(false);
+            //ObjectLoaded.Invoke();
 
+            //Alex's Addition
+            shrinkScript.loadedItems.Add(other.gameObject);
+            other.gameObject.GetComponent<Collider>().enabled = false;
+            shrinkScript.shrink = true;
+            Invoke("HideLoadedItem", 0.5f);
         }
     }
 
     //Also Alex's Stuff
     void HideLoadedItem()
     {
+        shrinkScript.shrink = false;
+
+        _loadedObjects.Add(shrinkScript.loadedItems[0]);
+        ObjectLoaded.Invoke();
+
         shrinkScript.loadedItems[0].gameObject.SetActive(false);
         shrinkScript.loadedItems.RemoveAt(0);
-        shrinkScript.shrink = false;
+
 
     }
 

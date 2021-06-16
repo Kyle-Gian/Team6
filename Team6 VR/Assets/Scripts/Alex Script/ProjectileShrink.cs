@@ -16,6 +16,9 @@ public class ProjectileShrink : MonoBehaviour
     [HideInInspector]
     public bool shrink;
 
+    //[HideInInspector]
+    //public bool expand;
+
     [HideInInspector]
     public AudioSource _audio;
 
@@ -28,6 +31,9 @@ public class ProjectileShrink : MonoBehaviour
     {
         if (shrink)
             OnLoad();
+
+        //if (expand)
+        //    OnShoot();
     }
 
     void OnLoad()
@@ -57,8 +63,23 @@ public class ProjectileShrink : MonoBehaviour
 
     }
 
-    void OnShoot()
-    {
+    //void OnShoot()
+    //{
+    //    foreach (GameObject item in shotItems)
+    //    {
+    //        //item.GetComponentInChildren<Collider>().enabled = false;
+    //        item.GetComponent<Rigidbody>().isKinematic = false;
 
-    }
+    //        //Shrink
+    //        item.transform.localScale = Vector3.Lerp(item.transform.localScale, new Vector3(1, 1, 1), shrinkSpeed * Time.deltaTime);
+    //    }
+
+    //    Invoke("RemoveShotItem", 5);
+
+    //}
+
+    //void RemoveShotItem()
+    //{
+    //    shotItems.RemoveAt(0);
+    //}
 }

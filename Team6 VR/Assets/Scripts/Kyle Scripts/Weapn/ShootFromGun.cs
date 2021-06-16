@@ -4,6 +4,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,7 @@ public class ShootFromGun : MonoBehaviour
     public Transform _barrel;
 
     public UnityEvent ObjectShotFromGun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +38,15 @@ public class ShootFromGun : MonoBehaviour
                     _weaponShot = true;
                     obj.transform.position = _barrel.position;
                     obj.SetActive(true);
+                    
+                    obj.GetComponent<Collider>().enabled = true;
+                    objRB.isKinematic = false;
+                    obj.transform.localScale = new Vector3(1, 1, 1);
+
                     objRB.velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed));
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
                     StartCoroutine("CanShoot");
+
                 }
 
             }
