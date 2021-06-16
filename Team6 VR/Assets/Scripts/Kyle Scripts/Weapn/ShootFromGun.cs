@@ -45,7 +45,7 @@ public class ShootFromGun : MonoBehaviour
                     
                     ObjectShotFromGun.Invoke();
 
-                    objRB.velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed * 100 * Time.deltaTime));
+                    objRB.velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed * 100 * Time.fixedDeltaTime));
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
                     StartCoroutine("CanShoot");
 
