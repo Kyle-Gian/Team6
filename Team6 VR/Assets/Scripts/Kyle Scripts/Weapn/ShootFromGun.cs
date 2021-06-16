@@ -12,7 +12,7 @@ public class ShootFromGun : MonoBehaviour
 {
     private ReloadWeapon _ReloadWeapon;
     [SerializeField] private float _shootingSpeed = 200;
-    public bool _weaponShot = false;
+    private bool _weaponShot = false;
     public Transform _barrel;
 
     public UnityEvent ObjectShotFromGun;
