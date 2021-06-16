@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
 
         if (rb != null)
         {
-            rb.velocity = mouseRay.direction * moveSpeed;
+            rb.velocity = mouseRay.direction* moveSpeed;
         }
 
         if(onEnemyHit != null)

@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(AudioSource))]
 public class DartProjectile : MonoBehaviour
 {
 
@@ -50,11 +49,11 @@ public class DartProjectile : MonoBehaviour
         if (!other.gameObject.CompareTag("Gun"))
         {
             hitSomething = true;
-            Stick();
-            if (other.gameObject.CompareTag("Can"))
+            Stick(other);
+            if (other.gameObject.CompareTag("Can") || other.gameObject.CompareTag("PopUpTarget"))
             {
                 transform.SetParent(other.transform);
-                Debug.Log(other.gameObject.name);
+                // Debug.Log(transform.rotation);
 
             }
             //if (rb != null)
@@ -64,7 +63,7 @@ public class DartProjectile : MonoBehaviour
 
     }
 
-    private void Stick()
+    private void Stick(Collision other)
     {
         rb.constraints = RigidbodyConstraints.FreezeAll;
     }
