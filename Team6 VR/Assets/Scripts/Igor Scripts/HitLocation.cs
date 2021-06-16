@@ -84,7 +84,7 @@ public class HitLocation : MonoBehaviour
         if (other.transform.CompareTag("LoadableObject"))
         {
             //Check if the target is a pop up target due to knock down check
-            if (transform.CompareTag("PopUpTarget"))
+            if (transform.parent.parent.CompareTag("PopUpTarget"))
             {
                 //check if the target has been knocked down before adding points
                 if (!firstHit && !GetComponent<SmallTargetKnockedDown>()._targetKnocked)

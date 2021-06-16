@@ -20,9 +20,10 @@ public class BallShotAtTarget : Challenges
     }
 
 
-    void ChallengeIsCompleted()
+    void  ChallengeIsCompleted()
     {
         _challengeComplete = true;
+        ChallengeCompleted.Invoke();
     }
 
 }
