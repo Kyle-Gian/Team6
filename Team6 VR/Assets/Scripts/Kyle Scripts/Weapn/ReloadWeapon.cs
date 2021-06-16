@@ -64,14 +64,14 @@ public class ReloadWeapon : MonoBehaviour
         if (other.CompareTag("LoadableObject") && _loadedObjects.Count < _gunCapacity)
         {
             //Checks if obj is attached to hand, if so removes from hand before adding to list 
-            if (other.transform == _leftHandInteractor.attachTransform)
+            if (_leftHandInteractor.selectTarget.isSelected)
             {
-                _leftHandInteractor.attachTransform.DetachChildren();
+                _leftHandInteractor.selectTarget.interactionManager.SelectCancel(_leftHandInteractor, other.transform.GetComponent<XRGrabInteractable>());
             }
 
-            if (other.transform == _rightHandInteractor.attachTransform)
+            if (_rightHandInteractor.selectTarget.isSelected)
             {
-                _rightHandInteractor.attachTransform.DetachChildren();
+                _rightHandInteractor.selectTarget.interactionManager.SelectCancel(_rightHandInteractor, other.transform.GetComponent<XRGrabInteractable>());
             }
 
             //_loadedObjects.Add(other.gameObject);
