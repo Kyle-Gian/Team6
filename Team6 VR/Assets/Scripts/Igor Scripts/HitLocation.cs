@@ -48,7 +48,7 @@ public class HitLocation : MonoBehaviour
         {
             //Get the left hand interactor and access the event
             _leftHandInteractor = _leftHand.GetComponent<XRDirectInteractor>();
-            _leftHandInteractor.selectEntered.RemoveListener(HitLocation_hitEvent);
+            _leftHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
 
         }
         else
@@ -60,7 +60,7 @@ public class HitLocation : MonoBehaviour
         {
             //Get the right hand interactor and access the event
             _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
-            _rightHandInteractor.selectEntered.RemoveListener(HitLocation_hitEvent);
+            _rightHandInteractor.selectEntered.AddListener(HitLocation_hitEvent);
 
         }
         else
@@ -83,11 +83,12 @@ public class HitLocation : MonoBehaviour
     {
         if (other.transform.CompareTag("LoadableObject"))
         {
+
             //Check if the target is a pop up target due to knock down check
-            if (transform.parent.parent.CompareTag("PopUpTarget"))
+            if (transform.CompareTag("PopUpCollider"))
             {
                 //check if the target has been knocked down before adding points
-                if (!firstHit && !GetComponent<SmallTargetKnockedDown>()._targetKnocked)
+                if (!firstHit && GetComponent<SmallTargetKnockedDown>()._targetKnocked == false)
                 {
                     float dis = Vector3.Distance(other.contacts[0].point, transform.position);
 
