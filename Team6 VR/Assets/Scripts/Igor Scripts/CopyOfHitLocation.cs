@@ -7,7 +7,6 @@ public class CopyOfHitLocation : MonoBehaviour
 {
     public List<Color> colors = new List<Color>();
 
-
     public GameObject floatingScore;
     public float outer = 0f;
     public float middle = 0f;

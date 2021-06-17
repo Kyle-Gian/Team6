@@ -15,6 +15,7 @@ public class DartProjectile : MonoBehaviour
     public UnityEvent ProjectileHit;
     ShootFromGun sfg;
     public bool hitSomething = false;
+    public bool soundHasPlayed = false;
 
 
     private void Start()
@@ -39,12 +40,16 @@ public class DartProjectile : MonoBehaviour
         //if (rb.velocity.magnitude > velocity /*&& sfg._weaponShot*/)
         //{
         //audioSource.clip = impact;
-        //audioSource.Play();
+        if (!soundHasPlayed)
+        {
+            audioSource.PlayOneShot(impact);
+            soundHasPlayed = true;
+
+        }
         //Instantiate(particleEffect, transform.position, Quaternion.identity);
         //if (sfg._weaponShot)
         //transform.SetParent(other.transform, true);
         //Destroy(gameObject);
-        //  Debug.Log("dart hit can");
         // }
         if (!other.gameObject.CompareTag("Gun"))
         {

@@ -11,13 +11,14 @@ public class CanSelfData : MonoBehaviour
     AudioSource audioSource;
     Rigidbody rb;
     public float velocity = 1f;
+    public Vector3 startPos;
     
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
-        
+        startPos = transform.position;
     }
 
     private void OnCollisionEnter(Collision other)

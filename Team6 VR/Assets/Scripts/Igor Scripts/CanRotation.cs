@@ -10,10 +10,6 @@ public class CanRotation : MonoBehaviour
 
     public GameObject floatingScore;
 
-    //public List<Transform> cans1 = new List<Transform>();
-    //public List<Transform> cans2 = new List<Transform>();
-    //public List<Transform> cans3 = new List<Transform>();
-    //public List<Transform> cans4 = new List<Transform>();
     public List<Transform> allCans = new List<Transform>();
 
     public bool allCansFallen = false;
@@ -46,58 +42,15 @@ public class CanRotation : MonoBehaviour
             {
                 allCans.Add(canStack.GetChild(j));
             }
-
-            //for (int j = 0; j < canStack.childCount; j++)
-            //{
-            //    if (i == 0)
-            //    {
-            //        cans1.Add(canStack.GetChild(j));
-
-            //    }
-            //    else if (i == 1)
-            //    {
-            //        cans2.Add(canStack.GetChild(j));
-
-            //    }
-            //    else if (i == 2)
-            //    {
-            //        cans3.Add(canStack.GetChild(j));
-
-            //    }
-            //    else if (i == 3)
-            //    {
-            //        cans4.Add(canStack.GetChild(j));
-
-            //    }
-            //}
         }
     }
 
     private void Update()
     {
 
-        //foreach (var c in cans4)
-        //{
-        //    CanRotationCheck(c);
-        //}
-        //foreach (var c in cans3)
-        //{
-        //    CanRotationCheck(c);
-
-        //}
-        //foreach (var c in cans2)
-        //{
-        //    CanRotationCheck(c);
-        //}
-        //foreach (var c in cans1)
-        //{
-        //    CanRotationCheck(c);
-
-        //}
-
         foreach (var c in allCans)
         {
-            CanRotationCheck(c);
+            CanCheck(c);
             if (numOfCansFallen.numberOfCansFallenOver == 36)
             {
                 numOfCansFallen.numberOfCansFallenOver = 0;
@@ -109,26 +62,32 @@ public class CanRotation : MonoBehaviour
                 }
             }
         }
-
     }
 
 
-    public void CanRotationCheck(Transform can)
+    public void CanCheck(Transform can)
     {
         CanSelfData canData = can.GetComponent<CanSelfData>();
 
         if (!canData.fallen)
         {
-            if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2)
+
+            if (CheckCanPosAndAngle(can, canData))
             {
                 canData.fallen = true;
                 numOfCansFallen.numberOfCansFallenOver += 1;
                 ShowScoreText(scoreValue, can);
                 can.GetComponentInChildren<Renderer>().material.color = Color.red;
-
             }
-        }
+            //if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2)
+            //{
+            //    canData.fallen = true;
+            //    numOfCansFallen.numberOfCansFallenOver += 1;
+            //    ShowScoreText(scoreValue, can);
+            //    can.GetComponentInChildren<Renderer>().material.color = Color.red;
 
+            //}
+        }
     }
 
 
@@ -150,5 +109,17 @@ public class CanRotation : MonoBehaviour
         Destroy(points, 2f);
     }
 
+
+    public bool CheckCanPosAndAngle(Transform can, CanSelfData canData)
+    {
+        if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2) // Check angle
+            return true;
+
+        if (Vector3.Distance(can.position, canData.startPos) > 0.1f) //Check position
+            return true;
+
+
+        return false;
+    }
 
 }
