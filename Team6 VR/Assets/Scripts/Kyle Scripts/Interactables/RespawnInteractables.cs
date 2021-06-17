@@ -26,7 +26,7 @@ public class RespawnInteractables : MonoBehaviour
     {
         ButtonPress = new UnityEvent();
         _interactables = GameObject.FindGameObjectsWithTag("LoadableObject").ToList();
-        _interactables = GameObject.FindGameObjectsWithTag("Can").ToList();
+        _cans = GameObject.FindGameObjectsWithTag("Can").ToList();
         _weapon = GameObject.FindGameObjectWithTag("Gun");
         _button = GameObject.FindGameObjectWithTag("Gun Button");
         _joint = _button.GetComponent<ConfigurableJoint>();
@@ -59,7 +59,7 @@ public class RespawnInteractables : MonoBehaviour
     {
         for (int i = 0; i < _cans.Count; i++)
         {
-            _cans[i].GetComponent<ResetPosition>().ResetObjectPos();
+            _cans[i].GetComponent<ResetCanPos>().ResetObjectPos();
         }
     }
 }

@@ -36302,6 +36302,8 @@ MonoBehaviour:
   outerScore: 100
   middleScore: 200
   bullseyeScore: 500
+  sounds: []
+  audioSource: {fileID: 0}
   _leftHand: {fileID: 0}
   _rightHand: {fileID: 0}
 --- !u!114 &11898837
