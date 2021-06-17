@@ -12,20 +12,18 @@ public class CopyOfHitLocation : MonoBehaviour
     public float outer = 0f;
     public float middle = 0f;
     public float bullseye = 0f;
+    [Space]
     public int outerScore = 100;
     public int middleScore = 200;
     public int bullseyeScore = 500;
     
     public static bool firstHit = false;
     ScoreScreen ss;
-
-    public AudioClip impact0;
-    public AudioClip impact1;
-    public AudioClip impact2;
-    public AudioClip impact3;
+    [Space]
+    public List<AudioClip> impacts = new List<AudioClip>();
     AudioSource audioSource;
     // Player player;
-
+     
     private void Awake()
     {
         // player = FindObjectOfType<Player>();
@@ -64,23 +62,22 @@ public class CopyOfHitLocation : MonoBehaviour
                 if (dis > outer)
                 {
                     ShowScoreText(outerScore, other);
-                    audioSource.clip = impact1;
-                    audioSource.Play();
+                    PlaySound(0);
                     //Debug.Log("hit outer");
                 }
                 else if (dis > middle)
                 {
                     ShowScoreText(middleScore, other);
-                    audioSource.clip = impact2;
-                    audioSource.Play();
+                    PlaySound(1);
+
                     // Debug.Log("hit middle");
 
                 }
                 else if (dis > bullseye)
                 {
                     ShowScoreText(bullseyeScore, other);
-                    audioSource.clip = impact3;
-                    audioSource.Play();
+                    PlaySound(2);
+
                     //Debug.Log("bullseye");
 
                 }
@@ -102,6 +99,11 @@ public class CopyOfHitLocation : MonoBehaviour
         points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
         ss.score += score;
         Destroy(points, 2f);
+    }
+
+    public void PlaySound(int index)
+    {
+        audioSource.PlayOneShot(impacts[index]);
     }
 
 }
