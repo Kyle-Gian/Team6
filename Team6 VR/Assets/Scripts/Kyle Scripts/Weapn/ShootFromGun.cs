@@ -43,7 +43,7 @@ public class ShootFromGun : MonoBehaviour
                     
                     obj.GetComponent<Collider>().enabled = true;
                     objRB.isKinematic = false;
-                    obj.transform.localScale = new Vector3(1, 1, 1);
+                    obj.transform.localScale = new Vector3(1, 1, 1);      
                     
                     ObjectShotFromGun.Invoke();
 
@@ -52,9 +52,7 @@ public class ShootFromGun : MonoBehaviour
                     StartCoroutine("CanShoot");
 
                 }
-
             }
-
         }
     }
 

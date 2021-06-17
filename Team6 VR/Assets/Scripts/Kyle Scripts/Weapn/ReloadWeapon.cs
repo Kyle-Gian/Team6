@@ -28,23 +28,25 @@ public class ReloadWeapon : MonoBehaviour
         _loadedObjects.Capacity = _gunCapacity;
 
         shrinkScript = GetComponentInChildren<ProjectileShrink>();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LoadableObject") && _loadedObjects.Count < _gunCapacity)
         {
-            //_loadedObjects.Add(other.gameObject);
-            //ObjectLoaded.Invoke();
-            //_loadedObjects.Add(other.gameObject);
-            //other.gameObject.SetActive(false);
-            //ObjectLoaded.Invoke();
+            XRGrabInteractable _grabInteractable = null;
+            _grabInteractable = other?.GetComponent<XRGrabInteractable>();
 
-            //Alex's Addition
-            shrinkScript.loadedItems.Add(other.gameObject);
-            other.gameObject.GetComponent<Collider>().enabled = false;
-            shrinkScript.shrink = true;
-            Invoke("HideLoadedItem", 0.5f);
+            if (!_grabInteractable.isSelected)
+            {
+                //Alex's Addition
+                shrinkScript.loadedItems.Add(other.gameObject);
+                other.gameObject.GetComponent<Collider>().enabled = false;
+                shrinkScript.shrink = true;
+                Invoke("HideLoadedItem", 0.5f);
+            }
+
         }
     }
 
