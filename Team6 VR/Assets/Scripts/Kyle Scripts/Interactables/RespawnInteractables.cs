@@ -7,36 +7,42 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RespawnInteractables : MonoBehaviour
 {
-    //[SerializeField] private Transform _button;
-    //private Vector3 _startPosition;
+    public UnityEvent ButtonPress;
+
+    private GameObject _button;
+    private ConfigurableJoint _joint;
     
     private List<GameObject> _interactables = new List<GameObject>();
-    GameObject _weapon;
+    private List<GameObject> _cans = new List<GameObject>();
+    private GameObject _weapon;
+
+    private Vector3 _startPositon; 
     // Start is called before the first frame update
     void Start()
     {
-        //_startPosition = _button.position;
+        ButtonPress = new UnityEvent();
         _interactables = GameObject.FindGameObjectsWithTag("LoadableObject").ToList();
+        _interactables = GameObject.FindGameObjectsWithTag("Can").ToList();
         _weapon = GameObject.FindGameObjectWithTag("Gun");
+        _button = GameObject.FindGameObjectWithTag("Gun Button");
+        _joint = _button.GetComponent<ConfigurableJoint>();
+        _startPositon = _button.transform.position;
+
     }
 
-    //private void Update()
-    //{
-    //    if (Vector3.Distance(_button.position, _startPosition) > 0.01f)
-    //    {
-    //        _weapon.GetComponent<ResetPosition>().ResetObjectPos();
+    private void Update()
+    {
+        if(Vector3.Distance(_joint.targetPosition, _startPositon) > 0.1f)
+        {
+            if (ButtonPress != null)
+               ButtonPress.Invoke();
+        }
+    }
 
-    //        for (int i = 0; i < _interactables.Count; i++)
-    //        {
-    //            _interactables[i].GetComponent<ResetPosition>().ResetObjectPos();
-
-    //        }
-    //    }    
-    //}
-    
 
     //Alex's inclusion
     public void ResetProjectiles()
@@ -49,4 +55,11 @@ public class RespawnInteractables : MonoBehaviour
         }
     }
 
+    public void ResetCans()
+    {
+        for (int i = 0; i < _cans.Count; i++)
+        {
+            _cans[i].GetComponent<ResetPosition>().ResetObjectPos();
+        }
+    }
 }

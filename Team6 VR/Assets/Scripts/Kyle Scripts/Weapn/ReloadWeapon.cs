@@ -14,14 +14,14 @@ public class ReloadWeapon : MonoBehaviour
     [HideInInspector]public UnityEvent ObjectLoaded;
     [HideInInspector]public UnityEvent ObjectShot;
 
-    public List<GameObject> _loadedObjects = new List<GameObject>();
+    public List<GameObject> _loadedObjects;
     public int _gunCapacity = 2;
 
     private ProjectileShrink shrinkScript;
 
     private void OnEnable()
     {
-
+        _loadedObjects = new List<GameObject>();
         ObjectLoaded = new UnityEvent();
         ObjectShot = new UnityEvent();
         
@@ -66,6 +66,9 @@ public class ReloadWeapon : MonoBehaviour
     {
         ObjectShot.Invoke();
 
-        _loadedObjects.Remove(obj);
+        if (_loadedObjects.Contains(obj))
+        {
+            _loadedObjects.Remove(obj);
+        }
     }
 }
