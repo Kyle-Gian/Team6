@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 
 public class ShootFromGun : MonoBehaviour
 {
@@ -15,13 +16,14 @@ public class ShootFromGun : MonoBehaviour
     public bool _weaponShot = false;
     public Transform _barrel;
 
-    public UnityEvent ObjectShotFromGun;
+    [HideInInspector] public UnityEvent ObjectShotFromGun;
 
     // Start is called before the first frame update
     void Start()
     {
         _ReloadWeapon = GetComponent<ReloadWeapon>();
         ObjectShotFromGun = new UnityEvent();
+        ObjectShotFromGun.AddListener(Test);
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class ShootFromGun : MonoBehaviour
     {
         if (_ReloadWeapon._loadedObjects.Count != 0)
         {
-            foreach (var obj in _ReloadWeapon._loadedObjects)
+            foreach (var obj in _ReloadWeapon._loadedObjects.ToList())
             {
                 //If the button has been pressed then shoot the bullet at the barrel position with the set speed
                 if (GunButtonPress.ButtonPressed() && !_weaponShot)
@@ -60,5 +62,10 @@ public class ShootFromGun : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         _weaponShot = false;
+    }
+
+    void Test()
+    {
+        Debug.LogWarning("Event Invoked");
     }
 }

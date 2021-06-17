@@ -90,7 +90,7 @@ public class HitLocation : MonoBehaviour
     {
         if (other.transform.CompareTag("LoadableObject"))
         {
-
+            Debug.LogWarning(firstHit);
             //Check if the target is a pop up target due to knock down check
             if (transform.CompareTag("PopUpCollider"))
             {
