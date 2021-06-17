@@ -1,9 +1,12 @@
-using System.Collections;
+//Author Igor Doslov
+//created: 10/6/2021
+//Last Modified: 17/6/2021
+
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
+// Checks each can's position and rotation to see if it has fallen. Also resets all cans positions when all cans have fallen
 public class CanRotation : MonoBehaviour
 {
     public List<Color> colors = new List<Color>();
@@ -34,6 +37,7 @@ public class CanRotation : MonoBehaviour
         ss = FindObjectOfType<ScoreScreen>();
         eulerAngles = transform.localEulerAngles;
 
+        // Add all cans to list
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform canStack = transform.GetChild(i);
@@ -50,13 +54,13 @@ public class CanRotation : MonoBehaviour
 
         foreach (var c in allCans)
         {
-            CanCheck(c);
-            if (numOfCansFallen.numberOfCansFallenOver == 36)
+            CanCheck(c); // Check position and rotation
+            if (numOfCansFallen.numberOfCansFallenOver == 36) // if all cans have fallen over
             {
-                numOfCansFallen.numberOfCansFallenOver = 0;
+                numOfCansFallen.numberOfCansFallenOver = 0; // reset number of cans fallen over
                 foreach (var can in allCans)
                 {
-                    can.GetComponent<ResetCanPos>().ResetObjectPos();
+                    can.GetComponent<ResetCanPos>().ResetObjectPos(); // reset cans position
                     can.GetComponentInChildren<Renderer>().material.color = Color.green;
 
                 }
@@ -72,30 +76,19 @@ public class CanRotation : MonoBehaviour
         if (!canData.fallen)
         {
 
-            if (CheckCanPosAndAngle(can, canData))
+            if (CheckCanPosAndAngle(can, canData)) // Check cans rotation and position
             {
                 canData.fallen = true;
                 numOfCansFallen.numberOfCansFallenOver += 1;
                 ShowScoreText(scoreValue, can);
                 can.GetComponentInChildren<Renderer>().material.color = Color.red;
             }
-            //if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2)
-            //{
-            //    canData.fallen = true;
-            //    numOfCansFallen.numberOfCansFallenOver += 1;
-            //    ShowScoreText(scoreValue, can);
-            //    can.GetComponentInChildren<Renderer>().material.color = Color.red;
-
-            //}
         }
     }
 
-
+    // Display score text at cans location
     public void ShowScoreText(int score, Transform can)
     {
-        //GameObject points = Instantiate(floatingScore, can.position, Quaternion.identity);
-        //points.transform.GetChild(0).GetComponent<TextMeshPro>().text = score.ToString();
-        //ss.score += score;
 
         TextMeshPro text = floatingScore.transform.GetChild(0).GetComponent<TextMeshPro>();
 
@@ -109,7 +102,7 @@ public class CanRotation : MonoBehaviour
         Destroy(points, 2f);
     }
 
-
+    // Check cans position and rotation
     public bool CheckCanPosAndAngle(Transform can, CanSelfData canData)
     {
         if (can.eulerAngles.x > angle1 && can.eulerAngles.x < angle2 || can.eulerAngles.z > angle1 && can.eulerAngles.z < angle2) // Check angle

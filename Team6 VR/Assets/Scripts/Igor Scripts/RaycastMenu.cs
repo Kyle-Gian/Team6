@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+//Author Igor Doslov
+//created: 10/6/2021
+//Last Modified: 17/6/2021
+
 using UnityEngine;
 
+// Detects when the player is looking directly at the menu so that it can be selectable
 public class RaycastMenu : MonoBehaviour
 {
 
@@ -27,7 +30,7 @@ public class RaycastMenu : MonoBehaviour
 
     public void ShootRay()
     {
-        int layerMask = 1 << 8;
+        int layerMask = 1 << 8; // layer 8
 
         Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
 
@@ -36,7 +39,7 @@ public class RaycastMenu : MonoBehaviour
         if (Physics.Raycast(rayOrigin, cam.transform.forward, out hit, range, layerMask))
         {
             Instantiate(shotEffect, hit.point, Quaternion.identity);
-            timer += Time.deltaTime;
+            timer += Time.deltaTime; // must look at the menu for a certain time
             if (timer >= timerLimit)
                 canHit = true;
         }

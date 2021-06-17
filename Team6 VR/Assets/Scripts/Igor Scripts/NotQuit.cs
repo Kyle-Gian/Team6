@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+//Author Igor Doslov
+//created: 10/6/2021
+//Last Modified: 17/6/2021
+
 using UnityEngine;
 
+// Makes menu disappear when projectile hits "no" menu button
 public class NotQuit : MonoBehaviour
 {
     public GameObject yes;

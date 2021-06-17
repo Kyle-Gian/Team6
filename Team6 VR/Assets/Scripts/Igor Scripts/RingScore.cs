@@ -1,4 +1,7 @@
-using System.Collections;
+//Author Igor Doslov
+//created: 10/6/2021
+//Last Modified: 17/6/2021
+
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -26,9 +29,7 @@ public class RingScore : MonoBehaviour
     {
         if (other.CompareTag("LoadableObject"))
         {
-            //GameObject points = Instantiate(floatingScore, transform.position, Quaternion.identity);
-            //points.transform.GetChild(0).GetComponent<TextMeshPro>().text = scoreValue.ToString();
-            //ss.score += scoreValue;
+
             ShowScoreText(scoreValue);
 
             if (!_RingActive)
@@ -49,6 +50,7 @@ public class RingScore : MonoBehaviour
         }
     }
 
+    // Instantiates score text at hit location
     public void ShowScoreText(int score)
     {
         TextMeshPro text = floatingScore.transform.GetChild(0).GetComponent<TextMeshPro>();

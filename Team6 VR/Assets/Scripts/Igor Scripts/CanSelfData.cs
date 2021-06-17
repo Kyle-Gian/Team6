@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+//Author Igor Doslov
+//created: 10/6/2021
+//Last Modified: 17/6/2021
+
 using UnityEngine;
 
+// Each can has this script so that it holds position info about itself that can be checked by CanRotation script
 public class CanSelfData : MonoBehaviour
 {
     public bool fallen = false;
-    //public CanFallenAmount numCansFallen;
 
     public AudioClip impact;
     AudioSource audioSource;

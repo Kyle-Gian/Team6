@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+//Author Igor Doslov
+//created: 16/6/2021
+//Last Modified: 17/6/2021
+
 using UnityEngine;
-using System;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(AudioSource))]
 public class WaterMelonProjectile : MonoBehaviour
 {
 
