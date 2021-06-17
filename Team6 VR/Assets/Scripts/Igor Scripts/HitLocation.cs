@@ -39,7 +39,6 @@ public class HitLocation : MonoBehaviour
 
     private void Start()
     {
-        //FindObjectOfType<Player>().onEnemyHit += HitLocation_hitEvent;
 
         _shootChallenge = FindObjectOfType<BallShotAtTarget>();
         _thrownChallenge = FindObjectOfType<BallThrownAtTarget>();

@@ -19,7 +19,7 @@ public class ShootFromGun : MonoBehaviour
     [HideInInspector] public UnityEvent ObjectShotFromGun;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _ReloadWeapon = GetComponent<ReloadWeapon>();
         ObjectShotFromGun = new UnityEvent();
@@ -36,17 +36,15 @@ public class ShootFromGun : MonoBehaviour
                 //If the button has been pressed then shoot the bullet at the barrel position with the set speed
                 if (GunButtonPress.ButtonPressed() && !_weaponShot)
                 {
+                    ObjectShotFromGun.Invoke();
                     Rigidbody objRB = obj.GetComponentInChildren<Rigidbody>();
                     _weaponShot = true;
                     obj.transform.position = _barrel.position;
                     obj.SetActive(true);
-                    
+
                     obj.GetComponent<Collider>().enabled = true;
                     objRB.isKinematic = false;
-                    obj.transform.localScale = new Vector3(1, 1, 1);      
-                    
-                    ObjectShotFromGun.Invoke();
-
+                    obj.transform.localScale = new Vector3(1, 1, 1);
                     objRB.velocity = _barrel.TransformDirection(new Vector3(0, 0, _shootingSpeed * 100 * Time.fixedDeltaTime));
                     _ReloadWeapon.RemoveObjectFromLoadedList(obj);
                     StartCoroutine("CanShoot");
