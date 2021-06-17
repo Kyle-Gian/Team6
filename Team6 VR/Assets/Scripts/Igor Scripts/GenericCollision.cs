@@ -7,7 +7,7 @@ public class GenericCollision : MonoBehaviour
 
     private void Start()
     {
-        onCollisionEvent = new UnityEvent();
+        //onCollisionEvent = new UnityEvent();
     }
 
     private void OnCollisionEnter(Collision collision)
