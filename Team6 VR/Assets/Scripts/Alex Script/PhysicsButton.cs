@@ -1,10 +1,12 @@
+//Author Alex Smits
+//created: 12/6/2021
+//Last Modified: 17/6/2021
+
 using System;
-using System.Collections;
-using System.Collections.Generic;
-//using System.Windows.Markup;
 using UnityEngine;
 using UnityEngine.Events;
 
+// Invokes a unity event when the button is pressed to enable functions to be called upon button press
 public class PhysicsButton : MonoBehaviour
 {
     public float _threshhold = 0.1f;

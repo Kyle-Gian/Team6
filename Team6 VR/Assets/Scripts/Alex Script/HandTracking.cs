@@ -1,6 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+//Author Alex Smits
+//created: 12/6/2021
+//Last Modified: 17/6/2021
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
