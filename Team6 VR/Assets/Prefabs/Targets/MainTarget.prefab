@@ -48259,11 +48259,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingScore: {fileID: 7841195416870345222, guid: ae22c1f2e8320a34b91fcc591621ab33, type: 3}
-  outer: 0
-  middle: 0
+  outer: 1
+  middle: 0.5
   bullseye: 0
-  outerScore: 100
-  middleScore: 200
-  bullseyeScore: 500
+  outerScore: 10
+  middleScore: 25
+  bullseyeScore: 50
+  sounds:
+  - {fileID: 8300000, guid: 2cdc6ba4fb866d34fb6b9f4446ce49c8, type: 3}
+  - {fileID: 8300000, guid: 1d88aec90ed2126428fca3054ce05b6d, type: 3}
+  - {fileID: 8300000, guid: 4a0b8915347618d4b9e5aa81a5d034db, type: 3}
+  audioSource: {fileID: 0}
   _leftHand: {fileID: 0}
   _rightHand: {fileID: 0}
