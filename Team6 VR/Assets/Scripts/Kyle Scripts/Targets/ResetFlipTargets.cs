@@ -10,11 +10,9 @@ using System.Linq;
 public class ResetFlipTargets : MonoBehaviour
 {
     List<GameObject> _targets = new List<GameObject>();
-    List<Animator> _targetAnimator = new List<Animator>();
     SmallTargetsKnocked _smallTargetsChallenge;
 
     string _hingeTagName;
-
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +26,7 @@ public class ResetFlipTargets : MonoBehaviour
 
             foreach (var item in _targets)
             {
-                _targetAnimator.Add(item.GetComponentInParent<Animator>());
-                item.GetComponentInChildren<SmallTargetKnockedDown>().AreAllTargetsKnocked.AddListener(CheckTargetsNeedToBeReset);
+                //item.GetComponentInChildren<SmallTargetKnockedDown>().AreAllTargetsKnocked.AddListener(CheckTargetsNeedToBeReset);
             }            
         }
     }
@@ -38,7 +35,7 @@ public class ResetFlipTargets : MonoBehaviour
     {
         for (int i = 0; i < _targets.Count; i++)
         {
-            Animator animator = _targetAnimator[i];
+            Animator animator = _targets[i].GetComponentInParent<Animator>();
             animator.SetBool("reset", true);
             animator.SetBool("knockDown", false);
         }
