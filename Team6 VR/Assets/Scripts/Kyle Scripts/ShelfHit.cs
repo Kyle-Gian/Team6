@@ -9,7 +9,7 @@ public class ShelfHit : MonoBehaviour
     public UnityEvent _shelfHasBeenHit;
     // Start is called before the first frame update
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("LoadableObject"))
         {

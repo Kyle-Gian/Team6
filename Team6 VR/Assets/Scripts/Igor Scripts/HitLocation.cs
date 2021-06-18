@@ -51,7 +51,7 @@ public class HitLocation : MonoBehaviour
         ShootFromGun shootWeapon = FindObjectOfType<ShootFromGun>();
         shootWeapon.ObjectShotFromGun.AddListener(HitLocation_hitEvent);
         
-        /*_leftHand = GameObject.FindWithTag("left");
+        _leftHand = GameObject.FindWithTag("left");
         _rightHand = GameObject.FindWithTag("right");
 
         //If either the left or right hand are null throw an error for the user
@@ -78,7 +78,7 @@ public class HitLocation : MonoBehaviour
         {
             Debug.LogWarning("Right hand has not been attached, Check Tag on Right hand controller");
 
-        }*/
+        }
     }
 
     public void HitLocation_hitEvent(SelectEnterEventArgs test)
