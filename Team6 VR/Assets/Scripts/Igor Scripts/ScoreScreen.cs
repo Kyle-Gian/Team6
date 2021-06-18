@@ -24,7 +24,8 @@ public class ScoreScreen : MonoBehaviour
         foreach (var s in scoreText)
         {
             s.text = score.ToString();
-
+            if (score >= 9999)
+                s.text = "9999";
         }
     }
 }
