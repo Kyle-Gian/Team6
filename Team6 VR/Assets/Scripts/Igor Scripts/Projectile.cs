@@ -28,8 +28,7 @@ public class Projectile : MonoBehaviour
     {
         if (rb.velocity.magnitude > velocity)
         {
-            audioSource.clip = impact;
-            audioSource.Play();
+            audioSource.PlayOneShot(impact);
             Instantiate(particleEffect, transform.position, Quaternion.identity);
         }
 
