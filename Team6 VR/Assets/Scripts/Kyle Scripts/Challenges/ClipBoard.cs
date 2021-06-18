@@ -14,7 +14,7 @@ public class ClipBoard : MonoBehaviour
     [SerializeField] List<Challenges> _challenges = new List<Challenges>();
     public UnityEvent _clipboardComplete;
 
-    private void Start()
+    private void OnEnable()
     {
         if (_challenges.Count != _paperText.transform.childCount)
         {

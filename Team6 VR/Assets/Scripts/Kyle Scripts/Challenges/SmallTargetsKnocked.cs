@@ -7,7 +7,7 @@ using TMPro;
 public class SmallTargetsKnocked : Challenges
 {
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         _text = GetComponent<TextMeshPro>();
 

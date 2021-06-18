@@ -11,7 +11,7 @@ using TMPro;
 public class WeaponThrownAtTarget : Challenges
 {
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         _text = GetComponent<TextMeshPro>();
 
