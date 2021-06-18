@@ -10,7 +10,7 @@ public class Challenges : MonoBehaviour
     public bool _challengeComplete;
     [HideInInspector] public  TextMeshPro _text;
     public UnityEvent ChallengeCompleted;
-    private void Start()
+    private void OnEnable()
     {
         _challengeComplete = false;
         _text = GetComponent<TextMeshPro>();
