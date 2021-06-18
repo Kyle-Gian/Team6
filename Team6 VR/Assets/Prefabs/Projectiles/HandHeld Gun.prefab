@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1513011383}
   - component: {fileID: 1513011384}
   - component: {fileID: 1513011385}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VaccumPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 1434066655742310426}
   - component: {fileID: 6803327317897692468}
   - component: {fileID: 1045276388559439843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fog Layer Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18533,7 +18533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2328431454211978078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel
   m_TagString: Barrel
   m_Icon: {fileID: 0}
@@ -18757,7 +18757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 228059761524752390}
   - component: {fileID: 4848464161522834175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio_Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23105,7 +23105,7 @@ GameObject:
   - component: {fileID: 5712475060919329664}
   - component: {fileID: 727388903}
   - component: {fileID: 727388907}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HandHeld Gun
   m_TagString: Gun
   m_Icon: {fileID: 0}
@@ -42511,7 +42511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5490204763906121200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GrabPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42545,7 +42545,7 @@ GameObject:
   - component: {fileID: 8199439523583377275}
   - component: {fileID: 3154986693532538232}
   - component: {fileID: 3524262411579082620}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fog_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54298,7 +54298,7 @@ GameObject:
   - component: {fileID: 1077944660171952445}
   - component: {fileID: 3002204710514599309}
   - component: {fileID: 210502977261912014}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fog_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70570,6 +70570,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: -7222976929760854697, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -7127075814448526167, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_SelectedEditorRenderState
       value: 2
@@ -70590,9 +70594,17 @@ PrefabInstance:
       propertyPath: m_SelectedEditorRenderState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -4930208535871811199, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -4188118728033013258, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -3315954688725367957, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -3299580949320129151, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -70614,6 +70626,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: -2647795180640921898, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -2078523000629313144, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -70626,6 +70642,22 @@ PrefabInstance:
       propertyPath: m_SelectedEditorRenderState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -1749512081636794546, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1404366471629062392, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -887326905115334507, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -866927618417373251, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -796279134625182727, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -70633,6 +70665,14 @@ PrefabInstance:
     - target: {fileID: -572845823266626522, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -81480734002584593, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 270668371211418519, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 404089028165251605, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_Mesh
@@ -70646,6 +70686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_ToyGun
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 945514519606626375, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_SelectedEditorRenderState
       value: 2
@@ -70657,6 +70701,10 @@ PrefabInstance:
     - target: {fileID: 1972563516828453492, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_SelectedEditorRenderState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2330059762348181710, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2518404471177725942, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_Mesh
@@ -70677,6 +70725,10 @@ PrefabInstance:
     - target: {fileID: 3895580125288695514, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_SelectedEditorRenderState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933448968224135418, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4005756790692215248, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_Mesh
@@ -70702,17 +70754,49 @@ PrefabInstance:
       propertyPath: m_SelectedEditorRenderState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5195066292892710417, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5255893965885793227, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_SelectedEditorRenderState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360054949751343900, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555025585334040551, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5688996077389730266, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_SelectedEditorRenderState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5783857923857373202, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994031517224978850, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551238392589077143, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6937576732591958958, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_SelectedEditorRenderState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092312808960777917, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750397243111347764, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7880400714551097962, guid: 6c1659bf2b8f1d749846161092d37dec, type: 3}
       propertyPath: m_Mesh
