@@ -8,29 +8,45 @@ using UnityEngine.Events;
 public class WaterMelonProjectile : MonoBehaviour
 {
 
-    public AudioClip impact;
-    AudioSource audioSource;
+
     public GameObject particleEffect;
+    public GameObject brokenMelon;
     public float velocity = 0.5f;
     Rigidbody rb;
     public UnityEvent ProjectileHit;
+    public float spinMin = 0f;
+    public float spinMax = 500f;
+    public bool firstHit = false;
 
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
+        transform.rotation = Quaternion.LookRotation(rb.velocity);
+    }
 
+    private void FixedUpdate()
+    {
+        rb.AddTorque(transform.right * Random.Range(spinMin, spinMax), ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (rb.velocity.magnitude > velocity)
+        if (gameObject != null)
         {
-            audioSource.clip = impact;
-            audioSource.Play();
-            Destroy(gameObject, 0.01f);
-            Instantiate(particleEffect, transform.position, Quaternion.identity);
+            if (!firstHit)
+            {
+
+                if (rb.velocity.magnitude > velocity)
+                {
+
+                    rb.AddExplosionForce(10f, transform.position, 10f);
+                    Instantiate(particleEffect, transform.position, Quaternion.identity);
+                    Instantiate(brokenMelon, transform.position, transform.rotation);
+                    Destroy(gameObject, 0.1f);
+                }
+            }
+            firstHit = true;
         }
 
     }

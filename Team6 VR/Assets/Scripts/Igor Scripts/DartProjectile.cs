@@ -26,7 +26,7 @@ public class DartProjectile : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!hitSomething)
             transform.rotation = Quaternion.LookRotation(rb.velocity); // Makes the dart rotate according to its velocity
