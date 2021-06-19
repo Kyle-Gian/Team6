@@ -27,7 +27,7 @@ public class ReloadWeapon : MonoBehaviour
         
         _loadedObjects.Capacity = _gunCapacity;
 
-        shrinkScript = GetComponentInChildren<ProjectileShrink>();
+        shrinkScript = FindObjectOfType<ProjectileShrink>();
 
     }
 
