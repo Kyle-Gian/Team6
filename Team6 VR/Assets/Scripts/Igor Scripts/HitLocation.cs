@@ -194,7 +194,11 @@ public class HitLocation : MonoBehaviour
     // Play a sound
     public void PlaySound(int index)
     {
-        audioSource.PlayOneShot(sounds[index]);
+        if (sounds[index] != null)
+        {
+            audioSource.PlayOneShot(sounds[index]);
+
+        }
     }
 
 }

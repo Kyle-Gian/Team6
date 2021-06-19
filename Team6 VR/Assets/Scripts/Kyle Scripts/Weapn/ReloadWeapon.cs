@@ -41,6 +41,7 @@ public class ReloadWeapon : MonoBehaviour
             if (!_grabInteractable.isSelected)
             {
                 //Alex's Addition
+                _loadedObjects.Add(other.gameObject);
                 shrinkScript.loadedItems.Add(other.gameObject);
                 other.gameObject.GetComponent<Collider>().enabled = false;
                 shrinkScript.shrink = true;
@@ -55,13 +56,11 @@ public class ReloadWeapon : MonoBehaviour
     {
         shrinkScript.shrink = false;
 
-        _loadedObjects.Add(shrinkScript.loadedItems[0]);
         ObjectLoaded.Invoke();
 
         shrinkScript.loadedItems[0].gameObject.SetActive(false);
         shrinkScript.loadedItems.RemoveAt(0);
-
-
+        
     }
 
     public void RemoveObjectFromLoadedList(GameObject obj)

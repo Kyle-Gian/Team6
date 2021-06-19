@@ -23,7 +23,6 @@ public class ShootFromGun : MonoBehaviour
     {
         _ReloadWeapon = GetComponent<ReloadWeapon>();
         ObjectShotFromGun = new UnityEvent();
-        ObjectShotFromGun.AddListener(Test);
 
         Physics.IgnoreLayerCollision(7, 7, true);
     }
@@ -61,9 +60,5 @@ public class ShootFromGun : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         _weaponShot = false;
     }
-
-    void Test()
-    {
-        Debug.LogWarning("Event Invoked");
-    }
+    
 }

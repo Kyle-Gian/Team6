@@ -35,6 +35,7 @@ public class ResetFlipTargets : MonoBehaviour
     {
         for (int i = 0; i < _targets.Count; i++)
         {
+            _targets[i].GetComponentInChildren<SmallTargetKnockedDown>()._targetKnocked = false;
             Animator animator = _targets[i].GetComponentInParent<Animator>();
             animator.SetBool("reset", true);
             animator.SetBool("knockDown", false);
@@ -43,18 +44,20 @@ public class ResetFlipTargets : MonoBehaviour
 
     public void CheckTargetsNeedToBeReset()
     {
-        for (int i = 0; i < _targets.Count; i++)
+        for (int i = 0; i != _targets.Count; i++)
         {
+            if (i == _targets.Count - 1)
+            {
+                ResetTargets();
+                _smallTargetsChallenge.ChallengeComplete();
+            }
+            
             if (!_targets[i].GetComponentInChildren<SmallTargetKnockedDown>()._targetKnocked)
             {
                 break;
             }
 
-            if (i == _targets.Count)
-            {
-                ResetTargets();
-                _smallTargetsChallenge.ChallengeComplete();
-            }
+
         }          
     }
 }
