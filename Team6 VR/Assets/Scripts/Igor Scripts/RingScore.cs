@@ -37,6 +37,7 @@ public class RingScore : MonoBehaviour
 
             if (!_RingActive)
             {
+                _RingActive = true;
                 if (_ringCheck.CheckAllRingsAreActive())
                 {
                     AllRingsActive();
