@@ -12265,9 +12265,9 @@ MonoBehaviour:
   middleScore: 200
   bullseyeScore: 500
   sounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 4a0b8915347618d4b9e5aa81a5d034db, type: 3}
+  - {fileID: 8300000, guid: 4a0b8915347618d4b9e5aa81a5d034db, type: 3}
+  - {fileID: 8300000, guid: 4a0b8915347618d4b9e5aa81a5d034db, type: 3}
   audioSource: {fileID: 5931719998778456919}
   _leftHand: {fileID: 0}
   _rightHand: {fileID: 0}
@@ -12307,9 +12307,9 @@ AudioSource:
   m_GameObject: {fileID: 6409283926820432799}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8075727558707476322, guid: 5b44a45cac4054a418e4a43406337f8b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

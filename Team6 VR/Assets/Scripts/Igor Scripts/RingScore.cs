@@ -9,7 +9,8 @@ using TMPro;
 public class RingScore : MonoBehaviour
 {
     public List<Color> colors = new List<Color>();
-
+    public AudioClip impact;
+    AudioSource audioSource;
     ScoreScreen ss;
     public GameObject floatingScore;
     public int scoreValue;
@@ -20,6 +21,7 @@ public class RingScore : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         ss = FindObjectOfType<ScoreScreen>();
         _ringsChallenge = FindObjectOfType<RingsActivated>();
         _ringCheck = FindObjectOfType<CheckRingsAreActive>();
@@ -29,6 +31,7 @@ public class RingScore : MonoBehaviour
     {
         if (other.CompareTag("LoadableObject"))
         {
+            audioSource.PlayOneShot(impact);
 
             ShowScoreText(scoreValue);
 

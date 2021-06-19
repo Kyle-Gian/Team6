@@ -61,7 +61,7 @@ public class CanRotation : MonoBehaviour
                 foreach (var can in allCans)
                 {
                     can.GetComponent<ResetCanPos>().ResetObjectPos(); // reset cans position
-                    can.GetComponentInChildren<Renderer>().material.color = Color.green;
+                    
 
                 }
             }
@@ -81,7 +81,7 @@ public class CanRotation : MonoBehaviour
                 canData.fallen = true;
                 numOfCansFallen.numberOfCansFallenOver += 1;
                 ShowScoreText(scoreValue, can);
-                can.GetComponentInChildren<Renderer>().material.color = Color.red;
+                
             }
         }
     }
