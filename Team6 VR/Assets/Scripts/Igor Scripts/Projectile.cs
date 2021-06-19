@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (rb.velocity.magnitude > velocity)
+        if (rb.velocity.magnitude > velocity && !audioSource.isPlaying)
         {
             audioSource.PlayOneShot(impact);
             Instantiate(particleEffect, transform.position, Quaternion.identity);
