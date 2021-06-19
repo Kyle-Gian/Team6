@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1513011383}
   - component: {fileID: 1513011384}
   - component: {fileID: 1513011385}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: VaccumPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 1434066655742310426}
   - component: {fileID: 6803327317897692468}
   - component: {fileID: 1045276388559439843}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Fog Layer Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54170,7 +54170,7 @@ GameObject:
   - component: {fileID: 1077944660171952445}
   - component: {fileID: 3002204710514599309}
   - component: {fileID: 210502977261912014}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Fog_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

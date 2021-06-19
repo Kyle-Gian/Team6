@@ -24,6 +24,8 @@ public class ShootFromGun : MonoBehaviour
         _ReloadWeapon = GetComponent<ReloadWeapon>();
         ObjectShotFromGun = new UnityEvent();
         ObjectShotFromGun.AddListener(Test);
+
+        Physics.IgnoreLayerCollision(7, 7, true);
     }
 
     // Update is called once per frame
