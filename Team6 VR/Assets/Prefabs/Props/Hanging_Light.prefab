@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 1744296695443416623}
   - component: {fileID: 294033461537554791}
   - component: {fileID: 4337529835595412145}
+  - component: {fileID: 1537235037284602692}
   m_Layer: 0
   m_Name: middleBulb_SM
   m_TagString: Untagged
@@ -174,6 +175,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1537235037284602692
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176109441605656345}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1174411105344118273, guid: b681a586993f0de4dbd0a994398b31c4, type: 3}
 --- !u!1 &3774536604649947082
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +318,7 @@ GameObject:
   - component: {fileID: 2792756529843006666}
   - component: {fileID: 387861168153560784}
   - component: {fileID: 2840239051599830776}
+  - component: {fileID: 8183764900987403006}
   m_Layer: 0
   m_Name: rightBulb_SM
   m_TagString: Untagged
@@ -373,6 +389,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8183764900987403006
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6485425398930257564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -146691430315121076, guid: b681a586993f0de4dbd0a994398b31c4, type: 3}
 --- !u!1 &7713702052937137081
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +600,7 @@ GameObject:
   - component: {fileID: 1980183860705080817}
   - component: {fileID: 7772982935951218760}
   - component: {fileID: 2912972811353860784}
+  - component: {fileID: 678531479512321113}
   m_Layer: 0
   m_Name: leftBulb_SM
   m_TagString: Untagged
@@ -640,3 +671,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &678531479512321113
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8291462705999011579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7873945351237732476, guid: b681a586993f0de4dbd0a994398b31c4, type: 3}

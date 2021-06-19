@@ -36,7 +36,7 @@ public class RaycastMenu : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(rayOrigin, cam.transform.forward, out hit, range, layerMask))
+        if (Physics.Raycast(rayOrigin, cam.transform.forward, out hit, range, layerMask, QueryTriggerInteraction.Collide))
         {
             Instantiate(shotEffect, hit.point, Quaternion.identity);
             timer += Time.deltaTime; // must look at the menu for a certain time
