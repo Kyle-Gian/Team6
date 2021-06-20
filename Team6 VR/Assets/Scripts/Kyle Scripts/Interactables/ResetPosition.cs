@@ -33,7 +33,7 @@ public class ResetPosition : MonoBehaviour
     void Update()
     {
         //Check the distance from start position, will trigger respawn after set time
-        if (Vector3.Distance(transform.position, _startPos) > 1)
+        if (Vector3.Distance(transform.position, _startPos) > .5f)
         {
             if (!_inAction)
             {

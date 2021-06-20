@@ -2,6 +2,7 @@
 //created: 16/6/2021
 //Last Modified: 17/6/2021
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,27 +28,42 @@ public class WaterMelonProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddTorque(transform.right * Random.Range(spinMin, spinMax), ForceMode.Impulse);
+        //rb.AddTorque(transform.right * Random.Range(spinMin, spinMax), ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision other)
     {
         if (gameObject != null)
         {
-            if (!firstHit)
+            if (CheckCollisionTag(other.transform.tag))
             {
+                rb.AddExplosionForce(10f, transform.position, 10f);
+                Instantiate(particleEffect, transform.position, Quaternion.identity);
+                Instantiate(brokenMelon, transform.position, transform.rotation);
+                //Destroy(gameObject, 0.1f);
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+                gameObject.GetComponent<MeshCollider>().enabled = false;
 
-                if (rb.velocity.magnitude > velocity)
-                {
-
-                    rb.AddExplosionForce(10f, transform.position, 10f);
-                    Instantiate(particleEffect, transform.position, Quaternion.identity);
-                    Instantiate(brokenMelon, transform.position, transform.rotation);
-                    Destroy(gameObject, 0.1f);
-                }
+                StartCoroutine(RespawnTime());
             }
             firstHit = true;
         }
+
+    }
+    private bool CheckCollisionTag(string tag)
+    {
+        if (tag == "Wall" || tag == "Main target" || tag == "PopUpCollider" || tag == "Can Collider")
+        {
+            return true;
+        }
+
+        return false;
+    }
+    IEnumerator RespawnTime()
+    {
+        yield return new WaitForSeconds(1.0f);
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
+        gameObject.GetComponent<MeshCollider>().enabled = true;
 
     }
 }
