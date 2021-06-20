@@ -20,6 +20,7 @@ TagManager:
   - Can
   - PopUpCollider
   - Fire
+  - Wall
   layers:
   - Default
   - TransparentFX

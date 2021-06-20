@@ -24,17 +24,19 @@ public class ClipBoard : MonoBehaviour
 
     public void CheckAllChallengesComplete()
     {
-        for (int i = 0; i < _challenges.Count; i++)
+        for (int i = 0; i < _challenges.Count + 1; i++)
         {
+            if (_challenges.Count == i)
+            {
+                UnlockNextClipBoard();
+                break;
+            }
+            
             if (!_challenges[i]._challengeComplete)
             {
                 break;
             }
             
-            if (_challenges.Count == i)
-            {
-                UnlockNextClipBoard();
-            }
         }
     }
 
