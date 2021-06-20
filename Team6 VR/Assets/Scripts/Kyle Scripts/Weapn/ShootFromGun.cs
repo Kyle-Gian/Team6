@@ -16,6 +16,8 @@ public class ShootFromGun : MonoBehaviour
     public bool _weaponShot = false;
     public Transform _barrel;
 
+    private AudioSource _audio;
+
     [HideInInspector] public UnityEvent ObjectShotFromGun;
 
     // Start is called before the first frame update
@@ -25,6 +27,7 @@ public class ShootFromGun : MonoBehaviour
         ObjectShotFromGun = new UnityEvent();
 
         Physics.IgnoreLayerCollision(7, 7, true);
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,6 +42,7 @@ public class ShootFromGun : MonoBehaviour
                 {
                     ObjectShotFromGun.Invoke();
                     Rigidbody objRB = obj.GetComponentInChildren<Rigidbody>();
+                    _audio.Play();
                     _weaponShot = true;
                     obj.transform.position = _barrel.position;
                     obj.SetActive(true);

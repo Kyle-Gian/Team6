@@ -36,20 +36,22 @@ public class ProjectileShrink : MonoBehaviour
 
     void OnLoad()
     {
+
         if(_audio.clip == null)
         {
             Debug.Log("Missing Audio Clip!");
         }
 
-        if (!_audio.isPlaying)
-        {
-            _audio.Play();
-        }
+
 
         foreach (GameObject item in loadedItems)
         {
             item.GetComponent<Rigidbody>().isKinematic = true;
 
+            if (!_audio.isPlaying)
+            {
+                _audio.Play();
+            }
 
             //Shrink
             item.transform.localScale = Vector3.Lerp(item.transform.localScale, item.transform.localScale * 0.1f, shrinkSpeed * Time.deltaTime);
