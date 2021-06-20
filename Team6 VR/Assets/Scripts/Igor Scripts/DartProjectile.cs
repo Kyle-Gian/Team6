@@ -25,7 +25,7 @@ public class DartProjectile : XRGrabInteractable
     {
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.LookRotation(rb.velocity);
+        //transform.rotation = Quaternion.LookRotation(rb.velocity);
 
         sfg = FindObjectOfType<ShootFromGun>();
     }
@@ -35,8 +35,8 @@ public class DartProjectile : XRGrabInteractable
 
         if (!hitSomething || isSelected)
         { 
-            rb.constraints = RigidbodyConstraints.None;
-            transform.rotation = Quaternion.LookRotation(rb.velocity); // Makes the dart rotate according to its velocity
+            //rb.constraints = RigidbodyConstraints.None;
+            //transform.rotation = Quaternion.LookRotation(rb.velocity); // Makes the dart rotate according to its velocity
 
         }
 
@@ -59,7 +59,7 @@ public class DartProjectile : XRGrabInteractable
 
             }
 
-            if (!other.gameObject.CompareTag("Gun"))
+            if (CheckCollisionTag(other.transform.tag))
             {
                 hitSomething = true;
                 Stick(other);
@@ -93,6 +93,16 @@ public class DartProjectile : XRGrabInteractable
         base.OnSelectEntered(args);
         transform.SetParent(null,true);
       
+    }
+
+    private bool CheckCollisionTag(string tag)
+    {
+        if (tag == "Wall" || tag == "Main target" || tag == "PopUpCollider" || tag == "Can Collider")
+        {
+            return true;
+        }
+
+        return false;
     }
 
 }

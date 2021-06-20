@@ -22,7 +22,7 @@ public class WaterMelonProjectile : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.LookRotation(rb.velocity);
+        //transform.rotation = Quaternion.LookRotation(rb.velocity);
     }
 
     private void FixedUpdate()

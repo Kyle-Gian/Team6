@@ -21,6 +21,7 @@ TagManager:
   - PopUpCollider
   - Fire
   - Wall
+  - Can Collider
   layers:
   - Default
   - TransparentFX
