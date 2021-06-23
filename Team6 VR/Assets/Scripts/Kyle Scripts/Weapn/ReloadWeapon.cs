@@ -14,6 +14,8 @@ public class ReloadWeapon : MonoBehaviour
     [HideInInspector]public UnityEvent ObjectLoaded;
     [HideInInspector]public UnityEvent ObjectShot;
 
+    public Transform _barrel;
+
     public List<GameObject> _loadedObjects;
     public int _gunCapacity = 2;
 
@@ -42,6 +44,7 @@ public class ReloadWeapon : MonoBehaviour
             {
                 //Alex's Addition
                 _loadedObjects.Add(other.gameObject);
+                other.transform.position = MoveStoredPosition(_loadedObjects.Count);
                 shrinkScript.loadedItems.Add(other.gameObject);
                 other.gameObject.GetComponent<Collider>().enabled = false;
                 shrinkScript.shrink = true;
@@ -71,5 +74,16 @@ public class ReloadWeapon : MonoBehaviour
         {
             _loadedObjects.Remove(obj);
         }
+    }
+
+    public Vector3 MoveStoredPosition(int index)
+    {
+        Vector3 position = Vector3.zero;
+        if (index > 0)
+        {
+           position = new Vector3(_barrel.transform.position.x, _barrel.transform.position.y + 1, _barrel.transform.position.z);
+        }
+        return position;
+
     }
 }

@@ -39,7 +39,6 @@ public class ResetPosition : MonoBehaviour
             {
                 StartCoroutine("RespawnTime");
             }
-
         }
     }
 
