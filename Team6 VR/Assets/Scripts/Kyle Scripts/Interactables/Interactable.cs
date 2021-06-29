@@ -2,27 +2,23 @@
 //created: 3/6/2021
 //Last Modified: 3/6/2021
 
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
 //Class used by objects that are thrown or shot at the targets
 public class Interactable : MonoBehaviour
 {
-    [HideInInspector] public Vector3 _startPosition;
     [HideInInspector] public bool _thrown;
 
     ReloadWeapon reloadWeapon;
-    public GameObject _leftHand;
-    public GameObject _rightHand;
+    private GameObject _leftHand;
+    private GameObject _rightHand;
     XRDirectInteractor _leftHandInteractor;
     XRDirectInteractor _rightHandInteractor;
     
 
     private void Start()
     {
-        _startPosition = transform.position;
         reloadWeapon = FindObjectOfType<ReloadWeapon>();
         reloadWeapon.ObjectLoaded.AddListener(delegate { ObjectShot(false); });
         _leftHand = GameObject.FindWithTag("left");
@@ -45,7 +41,7 @@ public class Interactable : MonoBehaviour
         {
             //Get the right hand interactor and access the event
             _rightHandInteractor = _rightHand.GetComponent<XRDirectInteractor>();
-            _leftHandInteractor.selectEntered.AddListener(ObjectThrown);
+            _rightHandInteractor.selectEntered.AddListener(ObjectThrown);
 
         }
         else
@@ -53,8 +49,6 @@ public class Interactable : MonoBehaviour
             Debug.LogWarning("Right hand has not been attached, Check Tag on Right hand controller");
 
         }
-        
-        
     }
 
     private void ObjectThrown(SelectEnterEventArgs arg0)

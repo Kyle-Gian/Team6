@@ -24,12 +24,11 @@ public class HitLocation : MonoBehaviour
 
     public AudioSource audioSource;
 
-    int hit = 0;
     public static bool firstHit = false;
     ScoreScreen ss;
 
-    public GameObject _leftHand;
-    public GameObject _rightHand;
+    private GameObject _leftHand;
+    private GameObject _rightHand;
     XRDirectInteractor _leftHandInteractor;
     XRDirectInteractor _rightHandInteractor;
 
@@ -102,8 +101,6 @@ public class HitLocation : MonoBehaviour
                 {
                     float dis = Vector3.Distance(other.contacts[0].point, transform.position);
 
-                    hit++;
-                    Debug.Log("Hit" + hit);
                     firstHit = true; // For some reason oncollision enter gets called twice in this project so need this to ensure only one hit
                     if (dis > outer) // outer ring on target
                     {
@@ -131,8 +128,7 @@ public class HitLocation : MonoBehaviour
                 {
                     float dis = Vector3.Distance(other.contacts[0].point, transform.position);
 
-                    hit++;
-                    Debug.Log("Hit" + hit);
+                    //Debug.Log("Hit" + hit);
                     firstHit = true;
                     if (dis > outer) // outer ring on target
                     {

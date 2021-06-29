@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ResetPosition : MonoBehaviour
 {
@@ -26,8 +27,13 @@ public class ResetPosition : MonoBehaviour
         _reloadWeapon = FindObjectOfType<ReloadWeapon>();
         _reloadWeapon.ObjectLoaded.AddListener(ObjectInAction);
         _reloadWeapon.ObjectShot.AddListener(ObjectNotInAction);
+        
+        GetComponent<XRGrabInteractable>().selectEntered.AddListener(ObjectInAction);
+        GetComponent<XRGrabInteractable>().selectExited.AddListener(ObjectNotInAction);
 
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -71,5 +77,16 @@ public class ResetPosition : MonoBehaviour
         _inAction = false;
     }
     
+    private void ObjectInAction(SelectEnterEventArgs arg0)
+    {
+        _inAction = true;
+    }
+    
+    private void ObjectNotInAction(SelectExitEventArgs arg0)
+    {
+        _inAction = false;
+
+    }
+
     
 }
